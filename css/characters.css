@@ -1,0 +1,40 @@
+#player {
+	background-color: blue; /* TEMPORARY */
+	height: 1.5vh;
+	width: 1.5vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	z-index: 5;
+}
+
+zombie {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+#ZombieF5Z1 {
+	position: absolute;
+	top: 10vh;
+	right: 9vh;
+}
+
+zombie .head {
+	height: 2vh;
+	width: 2.4vh;
+	background: green;
+	border-radius: 4px 4px 0 0;
+}
+
+zombie .neck {
+	height: 0.15384615384vh;
+	width: 2.2vh;
+	background: green;
+}
+
+zombie .torso {
+	background: #212527;
+}

@@ -1,0 +1,17 @@
+﻿#FloorFiveDoor {
+    position: absolute;
+    top: 8vh;
+    right: 12vh;
+    width: 6vh;
+    background: aliceblue;
+    height: 0.1vh;
+    z-index: 5;
+}
+
+div#FloorFiveDoor::after {
+    background: aqua;
+    height: 1vh;
+    width: 4vh;
+    transform: rotate(45deg);
+    content: " ";
+}
