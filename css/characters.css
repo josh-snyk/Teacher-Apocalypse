@@ -38,3 +38,15 @@ zombie .neck {
 zombie .torso {
 	background: #212527;
 }
+
+zombie .arm .left {
+	height: 0.5vh;
+	width: 1.5vh;
+	background: #068713;
+}
+
+zombie .arm .right {
+	height: 0.5vh;
+	width: 1.5vh;
+	background: #068713;
+}
