@@ -1,0 +1,25 @@
+{
+	"name": "teacher-apocalypse",
+	"version": "0.0.1",
+	"description": "A game",
+	"main": "main.js",
+	"scripts": {
+		"build-run": "npm install && electron .",
+		"start": "electron ."
+	},
+	"repository": "https://github.com/electron/electron-quick-start",
+	"keywords": [
+		"Electron"
+	],
+	"author": "Joel Sprouse & Spencer Woods",
+	"license": "CC0-1.0",
+	"dependencies": {
+		"sass": "^1.10.0",
+		"electron": "^1.4.1",
+		"ejs": "^3.1.6"
+	},
+	"devDependencies": {
+		"electron": "^17.1.1",
+		"mermaid": "^8.14.0"
+	}
+}

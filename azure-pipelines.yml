@@ -1,17 +1,13 @@
-# HTML
-# Archive your static HTML project and save it with the build record.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- task: ArchiveFiles@2
+- task: FtpUpload@2
   inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
+    credentialsOption: 'inputs'
+    serverUrl: 'ftp://ftp.joelsprouse.co.uk'
+    username: 'joel@joelsprouse.co.uk'
+    password: '5rXTxMxst&eh6@sd'
+    rootDirectory: '/'
+    filePatterns: '**'
+    remoteDirectory: '/upload/$(Build.BuildId)/'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false
