@@ -11,10 +11,10 @@
 		function loadMessageUpdate(message) {
 			load++;
 			document.getElementById("loadMessage").innerHTML = message;
-			console.log("Load: " + load);
+			// console.log("Load: " + load);
 		}
 
-		loadMessageUpdate("Loading Meta Data");
+		load++;
 	</script>
 
 	<title>Teacher Apocalypse</title>
@@ -23,27 +23,13 @@
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-	<!-- Matomo -->
-	<script>
-		var _paq = window._paq = window._paq || [];
-		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-		_paq.push(['trackPageView']);
-		_paq.push(['enableLinkTracking']);
-		(function () {
-			var u = "https://joelsprouse.co.uk/matomo/";
-			_paq.push(['setTrackerUrl', u + 'matomo.php']);
-			_paq.push(['setSiteId', '2']);
-			var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-			g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
-		})();
-	</script>
-	<noscript>
-		<p><img src="https://joelsprouse.co.uk/matomo/matomo.php?idsite=2&amp;rec=1" style="border:0;" alt="" /></p>
-	</noscript>
-	<!-- End Matomo Code -->
+	<!-- Analytics -->
+
+
+
 
 	<script>
-		loadMessageUpdate("Loading CSS");
+		load++;
 	</script>
 
 	<link rel="stylesheet" href="css/style.css">
@@ -56,7 +42,7 @@
 	<link rel="stylesheet" href="css/inventory.css">
 	<!--<meta http-equiv="refresh" content="15">-->
 	<script>
-		loadMessageUpdate("Loaded CSS");
+		load++;
 	</script>
 
 </head>
@@ -209,6 +195,9 @@
 	<script src="js/startScreen.js"></script>
 	<script src="js/books.js"></script>
 	<script src="js/inventory.js"></script>
+	<script>
+		loadMessageUpdate("Loading Levels")
+	</script>
 	<script src="js/loadLevels.js"></script>
 	<script src="js/renderZombies.js"></script>
 	<script src="js/playerMovement.js"></script>
@@ -217,7 +206,7 @@
 	</script>
 	<script src="js/damage.js"></script>
 	<script>
-		if (load == 7) {
+		if (load == 8) {
 			loadMessageUpdate("Starting Game");
 			$("#loadScreen").fadeOut(1000);
 			$("#startScreen").css("display", "flex");
