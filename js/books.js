@@ -15,48 +15,54 @@ $("#FloorFive .shelf .book").each(function () {
 	// brown      = 12    110
 	// grey       = 12    122
 	// choose random number
-	var random = Math.floor(Math.random() * 122);
+	var randomColour = Math.floor(Math.random() * 122);
 	//console.log(random);
-	if (random < 2) {
+	if (randomColour < 2) {
 		// add burgandy class
 		$(this).addClass("burgandy");
-	} else if (random < 28) {
+	} else if (randomColour < 28) {
 		// add blue class
 		$(this).addClass("blue");
-	} else if (random < 41) {
+	} else if (randomColour < 41) {
 		// add green class
 		$(this).addClass("green");
-	} else if (random < 47) {
+	} else if (randomColour < 47) {
 		// add yellow class
 		$(this).addClass("yellow");
-	} else if (random < 56) {
+	} else if (randomColour < 56) {
 		// add red class
 		$(this).addClass("red");
-	} else if (random < 59) {
+	} else if (randomColour < 59) {
 		// add purple class
 		$(this).addClass("purple");
-	} else if (random < 63) {
+	} else if (randomColour < 63) {
 		// add orange class
 		$(this).addClass("orange");
-	} else if (random < 68) {
+	} else if (randomColour < 68) {
 		// add pink class
 		$(this).addClass("pink");
-	} else if (random < 75) {
+	} else if (randomColour < 75) {
 		// add white class
 		$(this).addClass("white");
-	} else if (random < 98) {
+	} else if (randomColour < 98) {
 		// add black class
 		$(this).addClass("black");
-	} else if (random < 110) {
+	} else if (randomColour < 110) {
 		// add brown class
 		$(this).addClass("brown");
-	} else if (random < 122) {
+	} else if (randomColour < 122) {
 		// add grey class
 		$(this).addClass("grey");
 	}
-	random = Math.floor(Math.random() * 2);
+	// Spacing
+	var random = Math.floor(Math.random() * 2);
 	//console.log("margin-bottom " + random);
 	$(this).css("margin-bottom", random);
+
+	// Thickness
+	random = Math.floor(Math.random() * 5);
+	var thickness = random + 5;
+	$(this).css("height", thickness);
 	//console.groupEnd();
 	BookID++;
 });
