@@ -23,20 +23,22 @@ zombie {
 }
 
 zombie .head {
-	height: 2vh;
-	width: 2.4vh;
+	height: 0.7vh;
+	width: 0.74vh;
 	background: green;
 	border-radius: 4px 4px 0 0;
 }
 
 zombie .neck {
 	height: 0.15384615384vh;
-	width: 2.2vh;
+	width: 0.6vh;
 	background: green;
 }
 
 zombie .torso {
 	background: #212527;
+	height: 0.9vh;
+	width: 0.89vh;
 }
 
 zombie .arm .left {
