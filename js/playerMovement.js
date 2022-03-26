@@ -1,45 +1,75 @@
 // This file is for player movement
 
 
-var upPress, rightPressed, downPressed, leftPressed = false;
+var upPressed, rightPressed, downPressed, leftPressed = false;
 
 // check for arrow keys presses
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
-function tryPlayerRight() {
-	if (document.getElementById("player").offsetLeft < document.getElementById("FloorFive").width - document.getElementById("player").width) {
-		console.log("can go right");
+function tryPlayerUp() {
+	if (document.getElementById("player").offsetTop > document.getElementById("FloorFive").offsetTop + (document.getElementById("player").offsetHeight / 2) && upPressed) {
+		console.log("can go up");
+		document.getElementById("player").style.top = document.getElementById("player").offsetTop - 1 + "px";
+		setTimeout(tryPlayerUp, 40);
 	}
-	if (rightPressed) {
-		document.getElementById("player").style.left = document.getElementById("player").offsetLeft + 10 + "px";
-		tryPlayerRight();
+}
+
+function tryPlayerLeft() {
+	if (document.getElementById("player").offsetLeft > document.getElementById("FloorFive").offsetLeft + (document.getElementById("player").offsetWidth / 2) && leftPressed) {
+		console.log(document.getElementById("player").offsetLeft > document.getElementById("FloorFive").offsetWidth - document.getElementById("player").offsetWidth);
+		console.log("can go left");
+		document.getElementById("player").style.left = document.getElementById("player").offsetLeft - 1 + "px";
+		setTimeout(tryPlayerLeft, 40);
+	}
+}
+
+function tryPlayerDown() {
+	if (document.getElementById("player").offsetTop < (document.getElementById("FloorFive").offsetHeight + document.getElementById("FloorFive").offsetTop) - (document.getElementById("player").offsetHeight / 2) - 1 && downPressed) {
+		console.log("can go down");
+		document.getElementById("player").style.top = document.getElementById("player").offsetTop + 1 + "px";
+		setTimeout(tryPlayerDown, 40);
+	}
+}
+
+function tryPlayerRight() {
+	if (document.getElementById("player").offsetLeft < (document.getElementById("FloorFive").offsetWidth + document.getElementById("FloorFive").offsetLeft) - (document.getElementById("player").offsetWidth / 2) - 1 && rightPressed) {
+		console.log("can go right");
+		document.getElementById("player").style.left = document.getElementById("player").offsetLeft + 1 + "px";
+		setTimeout(tryPlayerRight, 40);
 	}
 }
 
 function keyDownHandler(e) {
 	if (e.code == "ArrowRight") {
 		rightPressed = true;
+		tryPlayerRight();
 	}
-	//while (e.code == 'ArrowLeft') {
-	//leftPressed = true;
-	//}
-	//while (e.code == 'ArrowUp') {
-	//upPressed = true;
-	//}
-	//while (e.code == 'ArrowDown') {
-	//downPressed = true;
-	//}
+	if (e.code == 'ArrowLeft') {
+		leftPressed = true;
+		tryPlayerLeft();
+	}
+	if (e.code == 'ArrowUp') {
+		upPressed = true;
+		tryPlayerUp();
+	}
+	if (e.code == 'ArrowDown') {
+		downPressed = true;
+		tryPlayerDown();
+	}
 }
+
 function keyUpHandler(e) {
 	if (e.code == "ArrowRight") {
 		rightPressed = false;
 	}
-	else if (e.code == 'ArrowLeft') {
+	if (e.code == 'ArrowLeft') {
 		leftPressed = false;
-	} else if (e.code == 'ArrowUp') {
+	}
+	if (e.code == 'ArrowUp') {
 		upPressed = false;
-	} else if (e.code == 'ArrowDown') {
+	}
+	if (e.code == 'ArrowDown') {
 		downPressed = false;
 	}
 }
