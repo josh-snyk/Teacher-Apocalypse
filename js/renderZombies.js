@@ -1,5 +1,5 @@
 // JavaScript source code
-$("zombie").each(function () {
+$("zombie").each(function () { // Every time zombie is seen in html file, the code below will run
 	var zombieHead = document.createElement("div");
 	zombieHead.classList.add("head");
 	this.appendChild(zombieHead);
