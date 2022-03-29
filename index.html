@@ -164,43 +164,46 @@
 				</div>
 			</div>
 		</div> <!-- End of Floor Five Map -->
-		
-		<div id="FloorFour" class="level-map">
-  <room>
-    <table>
-      <computer></computer>
-      <computer></computer>
-      <computer></computer>
-      <computer></computer>
-    </table>
-  </room>
-  <room>
-    <table>
-      <computer></computer>
-      <computer></computer>
-      <computer></computer>
-      <computer></computer>
-    </table>
-  </room>
-</div>
- <!-- End of Floor Four Map -->
-		
+
+		<div id="FloorFour" class="level-map walled-room">
+			<room>
+				<div class="table left">
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+				</div>
+			</room>
+			<room>
+				<div class="table">
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+					<computer></computer>
+				</div>
+			</room>
+		</div>
+		<!-- End of Floor Four Map -->
+
 		<div id="FloorThree" class="level-map">
 
 		</div> <!-- End of Floor Three Map -->
-		
+
 		<div id="FloorTwo" class="level-map">
 
 		</div> <!-- End of Floor Two Map -->
-		
+
 		<div id="FloorOne" class="level-map">
 
 		</div> <!-- End of Floor One Map -->
-		
+
 		<div id="FloorGround" class="level-map">
 			<workbench></workbench>
 		</div> <!-- End of Ground Floor Map -->
-		
+
 	</div> <!-- End GameInterface -->
 
 	<div id="EndScreens" class="endScreen">
@@ -221,6 +224,7 @@
 	</script>
 	<script src="js/loadLevels.js"></script>
 	<script src="js/renderZombies.js"></script>
+	<script src="js/renderComputers.js"></script>
 	<script src="js/playerMovement.js"></script>
 	<script>
 		loadMessageUpdate("Loading Health Bar");

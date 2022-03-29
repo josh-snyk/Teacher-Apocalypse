@@ -49,3 +49,30 @@
 	border-width: 1px;
 	width: 24px;
 }
+
+.table.left {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 75vh;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    bottom: 10vh;
+    position: absolute;
+}
+
+.computer {
+
+}
+
+.left .computer img {
+	transform: rotate(90deg);
+}
+
+.computerMouse {
+	width: 0.03vh;
+	height: 0.2vh;
+	background-color: #000;
+	border-radius: 6px;
+	transform: rotate(-90deg);
+}
