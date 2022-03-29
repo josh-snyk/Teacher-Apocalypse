@@ -1,0 +1,46 @@
+<script src="https://kit.fontawesome.com/f57ba50558.js" crossorigin="anonymous"></script>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/startScreen.css">
+<link rel="stylesheet" href="css/characters.css">
+<link rel="stylesheet" href="css/items.css">
+<link rel="stylesheet" href="css/walls.css">
+<link rel="stylesheet" href="css/doors.css">
+<link rel="stylesheet" href="css/gameInterface.css">
+<link rel="stylesheet" href="css/inventory.css">
+
+<div id="FloorFour" class="level-map walled-room active">
+	<room>
+		<div class="table left">
+			<computer></computer>
+			<computer></computer>
+			<computer></computer>
+			<computer></computer>
+		</div>
+	</room>
+	<room>
+		<div class="table">
+			<computer></computer>
+			<computer></computer>
+			<computer></computer>
+			<computer></computer>
+		</div>
+	</room>
+</div>
+
+<script src="js/books.js"></script>
+<script src="js/inventory.js"></script>
+<script>
+	loadMessageUpdate("Loading Levels")
+</script>
+<script src="js/loadLevels.js"></script>
+<script src="js/renderZombies.js"></script>
+<script src="js/renderComputers.js"></script>
+<script src="js/playerMovement.js"></script>
+<script>
+	loadMessageUpdate("Loading Health Bar");
+</script>
+<script src="js/damage.js"></script>

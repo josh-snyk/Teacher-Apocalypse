@@ -3,6 +3,7 @@
 /private/*
 .vscode/*
 .DS_Store
+from figma/
 
 # Logs
 logs
