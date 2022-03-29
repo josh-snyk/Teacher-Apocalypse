@@ -1,11 +1,14 @@
-﻿#FloorFiveDoor {
-    position: absolute;
+﻿.door {
+	z-index: 1;
+	position: absolute;
+}
+
+#FloorFiveDoor {
     top: 8vh;
     right: 12vh;
     width: 6vh;
     background: aliceblue;
     height: 0.1vh;
-    z-index: 5;
 }
 
 div#FloorFiveDoor::after {
