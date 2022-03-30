@@ -11,31 +11,31 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
-	if (e.code == "ArrowRight" || e.code == "D") {
+	if (e.code == 'ArrowRight' || e.code == 'KeyD') {
 		rightPressed = true;
 	}
-	if (e.code == 'ArrowLeft') {
+	if (e.code == 'ArrowLeft' || e.code == 'KeyA') {
 		leftPressed = true;
 	}
-	if (e.code == 'ArrowUp') {
+	if (e.code == 'ArrowUp' || e.code == 'KeyW') {
 		upPressed = true;
 	}
-	if (e.code == 'ArrowDown') {
+	if (e.code == 'ArrowDown' || e.code == 'KeyS') {
 		downPressed = true;
 	}
 }
 
 function keyUpHandler(e) {
-	if (e.code == "ArrowRight") {
+	if (e.code == 'ArrowRight' || e.code == 'KeyD') {
 		rightPressed = false;
 	}
-	if (e.code == 'ArrowLeft') {
+	if (e.code == 'ArrowLeft' || e.code == 'KeyA') {
 		leftPressed = false;
 	}
-	if (e.code == 'ArrowUp') {
+	if (e.code == 'ArrowUp' || e.code == 'KeyW') {
 		upPressed = false;
 	}
-	if (e.code == 'ArrowDown') {
+	if (e.code == 'ArrowDown' || e.code == 'KeyS') {
 		downPressed = false;
 	}
 }
