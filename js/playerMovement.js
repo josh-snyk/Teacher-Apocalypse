@@ -40,7 +40,13 @@ function keyUpHandler(e) {
 	}
 }
 
+function isPointInsideAABB(point, box) {
+	return (point.left >= box.offsetLeft && point.left <= box.offsetLeft + box.width) &&
+		(point.y >= box.minY && point.y <= box.maxY);
+}
+
 setInterval(function () {
+
 	if (leftPressed) {
 		player.style.left = player.offsetLeft - playerSpeed + "px"
 	}
@@ -54,17 +60,17 @@ setInterval(function () {
 		player.style.top = player.offsetTop + playerSpeed + "px"
 	}
 
-	$(".zombie").each(function () {
-		const element = document.getElementById("myDiv");
-		const rect = element.getBoundingClientRect();
+	$("zombie.active").each(function () {
+		var playerRect = player.getBoundingClientRect();
+		var zombieRect = this.getBoundingClientRect();
 
-		document.getElementById("demo").innerHTML =
-			"Left: " + rect.left.toFixed() + ", Top: " + rect.top.toFixed() + ", Width: " + rect.width + ", Height: " + rect.height;
+		console.log("Left: " + zombieRect.left.toFixed() + ", Top: " + zombieRect.top.toFixed() + ", Width: " + zombieRect.width + ", Height: " + zombieRect.height);
 
-		if (this.getBoundingClientRect()) { }
+		if (isPointInsideAABB(zombieRect, playerRect)) {
+			console.log("touching");
+		}
 	})
 	
 }, 50)
-
 
 
