@@ -107,7 +107,8 @@
 			<p id="playerHealthNumber">100%</p>
 		</div>
 		<div id="FloorFive" class="level-map walled-room">
-			<zombie id="ZombieF5Z1" health=5></zombie>
+			<zombie id="ZombieF5Z1" class="active zombie" health=5></zombie>
+			<zombie id="ZombieF5Z2" class="active zombie" health=5></zombie>
 			<div id="FloorFiveDoor" class="door"></div>
 			<div id="WallF5W1" class="wall"></div>
 			<div class="bookshelf" style="top: 8.5vh; position: absolute;">
@@ -226,7 +227,7 @@
 	<script src="js/loadLevels.js"></script>
 	<script src="js/renderZombies.js"></script>
 	<script src="js/renderComputers.js"></script>
-	<script src="js/playerMovement.js"></script>
+	<script src="js/playerMovement-old.js"></script>
 	<script>
 		loadMessageUpdate("Loading Health Bar");
 	</script>
