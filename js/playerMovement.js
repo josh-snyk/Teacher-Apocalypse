@@ -1,62 +1,27 @@
-// This file is for player movement
+// JavaScript source code
+var upPressed, rightPressed, downPressed, leftPressed, spacePressed = false;
+var player = document.getElementById("player");
 
+var zombieSpeed = 5;
+var score = 0;
+var totalZombies = 2; // Number of zombies on the level
+var playerSpeed = 6;
 
-var upPressed, rightPressed, downPressed, leftPressed = false;
-var playerSpeed = 50;
-
-// check for arrow keys presses
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
-function tryPlayerUp() {
-	if (document.getElementById("player").offsetTop > document.getElementById("FloorFive").offsetTop + (document.getElementById("player").offsetHeight / 2) && upPressed) {
-		console.log("can go up");
-		document.getElementById("player").style.top = document.getElementById("player").offsetTop - 1 + "px";
-		setTimeout(tryPlayerUp, playerSpeed);
-	}
-}
-
-function tryPlayerLeft() {
-	if (document.getElementById("player").offsetLeft > document.getElementById("FloorFive").offsetLeft + (document.getElementById("player").offsetWidth / 2) && leftPressed) {
-		console.log(document.getElementById("player").offsetLeft > document.getElementById("FloorFive").offsetWidth - document.getElementById("player").offsetWidth);
-		console.log("can go left");
-		document.getElementById("player").style.left = document.getElementById("player").offsetLeft - 1 + "px";
-		setTimeout(tryPlayerLeft, playerSpeed);
-	}
-}
-
-function tryPlayerDown() {
-	if (document.getElementById("player").offsetTop < (document.getElementById("FloorFive").offsetHeight + document.getElementById("FloorFive").offsetTop) - (document.getElementById("player").offsetHeight / 2) - 1 && downPressed) {
-		console.log("can go down");
-		document.getElementById("player").style.top = document.getElementById("player").offsetTop + 1 + "px";
-		setTimeout(tryPlayerDown, playerSpeed);
-	}
-}
-
-function tryPlayerRight() {
-	if (document.getElementById("player").offsetLeft < (document.getElementById("FloorFive").offsetWidth + document.getElementById("FloorFive").offsetLeft) - (document.getElementById("player").offsetWidth / 2) - 1 && rightPressed) {
-		console.log("can go right");
-		document.getElementById("player").style.left = document.getElementById("player").offsetLeft + 1 + "px";
-		setTimeout(tryPlayerRight, playerSpeed);
-	}
-}
-
 function keyDownHandler(e) {
-	if (e.code == "ArrowRight") {
+	if (e.code == "ArrowRight" || e.code == "D") {
 		rightPressed = true;
-		tryPlayerRight();
 	}
 	if (e.code == 'ArrowLeft') {
 		leftPressed = true;
-		tryPlayerLeft();
 	}
 	if (e.code == 'ArrowUp') {
 		upPressed = true;
-		tryPlayerUp();
 	}
 	if (e.code == 'ArrowDown') {
 		downPressed = true;
-		tryPlayerDown();
 	}
 }
 
@@ -74,4 +39,32 @@ function keyUpHandler(e) {
 		downPressed = false;
 	}
 }
+
+setInterval(function () {
+	if (leftPressed) {
+		player.style.left = player.offsetLeft - playerSpeed + "px"
+	}
+	if (rightPressed) {
+		player.style.left = player.offsetLeft + playerSpeed + "px"
+	}
+	if (upPressed) {
+		player.style.top = player.offsetTop - playerSpeed + "px"
+	}
+	if (downPressed) {
+		player.style.top = player.offsetTop + playerSpeed + "px"
+	}
+
+	$(".zombie").each(function () {
+		const element = document.getElementById("myDiv");
+		const rect = element.getBoundingClientRect();
+
+		document.getElementById("demo").innerHTML =
+			"Left: " + rect.left.toFixed() + ", Top: " + rect.top.toFixed() + ", Width: " + rect.width + ", Height: " + rect.height;
+
+		if (this.getBoundingClientRect()) { }
+	})
+	
+}, 50)
+
+
 
