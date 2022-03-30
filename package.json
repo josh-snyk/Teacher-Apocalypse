@@ -4,12 +4,15 @@
 	"description": "A game",
 	"main": "main.js",
 	"scripts": {
-		"build-run": "npm install && electron .",
+		"update": "npm install",
+		"build": "npm run make",
 		"start": "electron ."
 	},
-	"repository": "https://github.com/electron/electron-quick-start",
+	"repository": "https://github.com/14sprouj/Teacher-Apocalypse",
 	"keywords": [
-		"Electron"
+		"college",
+		"game",
+		"JavaScript"
 	],
 	"author": "Joel Sprouse & Spencer Woods",
 	"license": "CC0-1.0",
@@ -21,6 +24,10 @@
 	},
 	"devDependencies": {
 		"electron": "^17.1.1",
-		"mermaid": "^8.14.0"
+		"mermaid": "^8.14.0",
+		"@electron-forge/cli": "^6.0.0-beta.63"
+	},
+	"config": {
+		"forge": "./forge.config.js"
 	}
 }

@@ -1,9 +1,11 @@
 ._*
 .vs/*
-/private/*
+*/private/*
 .vscode/*
 .DS_Store
 from figma/
+*.tmp
+*.TMP
 
 # Logs
 logs
