@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	gameActive = false;
 	$("#btnStartGame").click(function () {
 		// Hide Start Screen
 		$("#startScreen").hide();
@@ -15,6 +16,8 @@ $(document).ready(function () {
 
 		// Display Game Interface
 		$("#outerGameInterface").css("display", "flex");
+
+		gameActive = true;
 	});
 
 	$("#btnQuitWindow").click(function () {

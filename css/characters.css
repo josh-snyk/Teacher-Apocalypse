@@ -1,30 +1,27 @@
 #player {
 	background-color: blue; /* TEMPORARY */
-	height: 1.5vh;
-	width: 1.5vh;
+	height: 2vh;
+	width: 2vh;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 100%;
 	z-index: 5;
+	transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
 }
 
 zombie {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-}
-
-#ZombieF5Z1 {
-	position: absolute;
-	top: 10vh;
-	right: 9vh;
+	z-index: 4;
+	transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
 }
 
 zombie .head {
-	height: 0.7vh;
-	width: 0.74vh;
+	height: 1.1vh;
+	width: 1.1vh;
 	background: green;
 	border-radius: 4px 4px 0 0;
 }
@@ -37,18 +34,30 @@ zombie .neck {
 
 zombie .torso {
 	background: #212527;
-	height: 0.9vh;
-	width: 0.89vh;
+	height: 1.5vh;
+	width: 1.5vh;
 }
 
 zombie .arm .left {
-	height: 0.5vh;
+	height: 1.5vh;
 	width: 1.5vh;
 	background: #068713;
 }
 
 zombie .arm .right {
-	height: 0.5vh;
+	height: 1.5vh;
 	width: 1.5vh;
 	background: #068713;
+}
+
+#ZombieF5Z1 {
+	position: absolute;
+	top: 10vh;
+	right: 9vw;
+}
+
+#ZombieF5Z2 {
+	position: absolute;
+	top: 16vh;
+	left: 11vw;
 }

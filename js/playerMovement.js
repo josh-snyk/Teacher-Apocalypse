@@ -46,18 +46,17 @@ function isPointInsideAABB(point, box) {
 }
 
 setInterval(function () {
-
-	if (leftPressed) {
-		player.style.left = player.offsetLeft - playerSpeed + "px"
-	}
-	if (rightPressed) {
-		player.style.left = player.offsetLeft + playerSpeed + "px"
-	}
-	if (upPressed) {
-		player.style.top = player.offsetTop - playerSpeed + "px"
-	}
-	if (downPressed) {
-		player.style.top = player.offsetTop + playerSpeed + "px"
+		if (leftPressed && gameActive) {
+			player.style.left = player.offsetLeft - playerSpeed + "px"
+		}
+		if (rightPressed && gameActive) {
+			player.style.left = player.offsetLeft + playerSpeed + "px"
+		}
+		if (upPressed && gameActive) {
+			player.style.top = player.offsetTop - playerSpeed + "px"
+		}
+		if (downPressed && gameActive) {
+			player.style.top = player.offsetTop + playerSpeed + "px"
 	}
 
 	$("zombie.active").each(function () {

@@ -1,9 +1,22 @@
-#outerGameInterface, #endScreens, .endScreen {
+#outerGameInterface, #endScreens, .endScreen, #pauseMenu {
 	display: flex;
 	height: 100vh;
 	width: 100vw;
 	background-color: mediumseagreen;
 	display: none;
+}
+
+#pauseMenu {
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	z-index: 10;
+	background: #0000;
+	transition: filter 2s;
+	height: fit-content;
+	width: fit-content;
 }
 
 .level-map {
