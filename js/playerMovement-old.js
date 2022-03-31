@@ -2,7 +2,7 @@
 
 
 var upPressed, rightPressed, downPressed, leftPressed = false;
-var playerSpeed = 50;
+var playerSpeed = 5;
 
 // check for arrow keys presses
 document.addEventListener("keydown", keyDownHandler, false);
