@@ -44,6 +44,7 @@
 	<!--<meta http-equiv="refresh" content="15">-->
 	<script>
 		load++;
+		var gameActive = false;
 	</script>
 
 </head>
@@ -74,6 +75,10 @@
 			</div>
 		</div>
 	</div>
+	<div id="pauseMenu">
+		<h1>Game Paused</h1>
+		<button id="btnResume">Resume</button>
+	</div>
 	<div id="outerGameInterface">
 		<div id="player"></div>
 		<div id="pauseButton" class="btnGameInterface">
@@ -88,16 +93,48 @@
 					Inventory
 				</div>
 				<div id="inventoryDisplayContent">
-					<div id="inventoryDisplayContentItems">
-						<div class="inventoryItem">
-							<div class="inventoryItemIcon">
-								<img src="media/wire.svg" alt="Wire" class="uncollected">
-							</div>
-							<div class="inventoryItemName">
-								Wire
-							</div>
-						</div>
-					</div>
+                    <div id="inventoryDisplayContentItems">
+                        <div class="inventoryItem">
+                            <div class="inventoryItemIcon">
+                                <img src="media/wire.svg" alt="Wire" class="uncollected">
+                            </div>
+                            <div class="inventoryItemName">
+                                Wire
+                            </div>
+                        </div>
+                        <div class="inventoryItem">
+                            <div class="inventoryItemIcon">
+                                <img src="media/fire-extinguisher.svg" alt="fire" class="uncollected">
+                            </div>
+                            <div class="inventoryItemName">
+                                Fire extinguisher
+                            </div>
+                        </div>
+                        <div class="inventoryItem">
+                            <div class="inventoryItemIcon">
+                                <img src="media/hairspray.svg" alt="hairspray" class="uncollected">
+                            </div>
+                            <div class="inventoryItemName">
+                                Hairspray
+                            </div>
+                        </div>
+                        <div class="inventoryItem">
+                            <div class="inventoryItemIcon">
+                                <img src="media/lighter.svg" alt="lighter" class="uncollected">
+                            </div>
+                            <div class="inventoryItemName">
+                                Lighter
+                            </div>
+                        </div>
+                        <div class="inventoryItem">
+                            <div class="inventoryItemIcon">
+                                <img src="media/tape.svg" alt="tape" class="uncollected">
+                            </div>
+                            <div class="inventoryItemName">
+                                Tape
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -219,21 +256,28 @@
 	</script>
 	<script src="js/fullscreen.js"></script>
 	<script src="js/startScreen.js"></script>
-	<script src="js/books.js"></script>
+	<script src="js/pauseGame.js"></script>
+	<script>
+		loadMessageUpdate("Putting books on bookshelves")
+	</script>
 	<script src="js/inventory.js"></script>
 	<script>
 		loadMessageUpdate("Loading Levels")
 	</script>
 	<script src="js/loadLevels.js"></script>
+	<script src="js/books.js"></script>
 	<script src="js/renderZombies.js"></script>
 	<script src="js/renderComputers.js"></script>
-	<script src="js/playerMovement-old.js"></script>
+	<script>
+		loadMessageUpdate("Giving the player a brain")
+	</script>
+	<script src="js/playerMovement.js"></script>
 	<script>
 		loadMessageUpdate("Loading Health Bar");
 	</script>
 	<script src="js/damage.js"></script>
 	<script>
-		if (load == 8) {
+		if (load == 10) {
 			loadMessageUpdate("Starting Game");
 			$("#loadScreen").fadeOut(1000);
 			$("#startScreen").css("display", "flex");
