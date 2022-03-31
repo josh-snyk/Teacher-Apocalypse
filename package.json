@@ -6,7 +6,11 @@
 	"scripts": {
 		"update": "npm install",
 		"build": "npm run make",
-		"start": "electron ."
+		"make": "electron-forge make",
+		"start": "node main.js",
+		"forge-start": "electron-forge start",
+		"forge-package": "electron-forge package",
+		"forge-make": "electron-forge make"
 	},
 	"repository": "https://github.com/14sprouj/Teacher-Apocalypse",
 	"keywords": [
@@ -17,15 +21,23 @@
 	"author": "Joel Sprouse & Spencer Woods",
 	"license": "CC0-1.0",
 	"dependencies": {
-		"sass": "^1.10.0",
-		"node-sass": "^6.0",
+		"ejs": "^3.1.6",
 		"electron": "^1.4.1",
-		"ejs": "^3.1.6"
+		"electron-squirrel-startup": "^1.0.0",
+		"node-sass": "^7.0.1",
+		"sass": "^1.10.0"
 	},
 	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.63",
+		"@electron-forge/maker-deb": "^6.0.0-beta.63",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.63",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+		"@electron-forge/maker-zip": "^6.0.0-beta.63",
+		"@electron-forge/publisher-github": "^6.0.0-beta.63",
 		"electron": "^17.1.1",
+		"electron-packager": "^15.4.0",
 		"mermaid": "^8.14.0",
-		"@electron-forge/cli": "^6.0.0-beta.63"
+		"update-electron-app": "^2.0.1"
 	},
 	"config": {
 		"forge": "./forge.config.js"

@@ -15,4 +15,13 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	var zombieArmL = document.createElement("div");
 	zombieArmL.classList.add("left");
 	zombieArms.appendChild(zombieArmL);
+	var zombieArmR = document.createElement("div");
+	zombieArmR.classList.add("right");
+	zombieArms.appendChild(zombieArmR);
+	var zombieLegs = document.createElement("div");
+	zombieLegs.classList.add("legs");
+	this.appendChild(zombieLegs);
+	var zombieLegL = document.createElement("div");
+	zombieLegL.classList.add("left");
+	zombieLegs.appendChild(zombieLegL);
 })
