@@ -16,12 +16,6 @@ zombie {
 	flex-direction: column;
 }
 
-#ZombieF5Z1 {
-	position: absolute;
-	top: 10vh;
-	right: 9vh;
-}
-
 zombie .head {
 	height: 0.7vh;
 	width: 0.74vh;
@@ -51,4 +45,16 @@ zombie .arm .right {
 	height: 0.5vh;
 	width: 1.5vh;
 	background: #068713;
+}
+
+#ZombieF5Z1 {
+	position: absolute;
+	top: 10vh;
+	right: 9vw;
+}
+
+#ZombieF5Z2 {
+	position: absolute;
+	top: 16vh;
+	left: 11vw;
 }
