@@ -68,6 +68,7 @@ function checkCollision() {
 }
 
 setInterval(function () {
+	console.group("Check");
 	if (leftPressed && gameActive) {
 		player.style.left = player.offsetLeft - playerSpeed + "px"
 	}
@@ -81,9 +82,17 @@ setInterval(function () {
 		player.style.top = player.offsetTop + playerSpeed + "px"
 	}
 
-	checkCollision();
+	//checkCollision();
+
+	var activeZombies = document.getElementsByClassName("active zombie");
+	for (let zombie in activeZombies) {
+		console.log("Zombie left" + zombie.offsetLeft);
+		console.log(zombie.offsetLeft < player.offsetLeft + player.offsetWidth && zombie.offsetLeft + zombie.offsetWidth > player.offsetLeft && zombie.offsetTop < player.offsetTop + player.offsetHeight && zombie.offsetHeight + zombie.offsetTop > player.offsetTop);
+	}
 
 	$("zombie.active").each(function () {
+		
+		console.debug("checking for collision");
 		let hasJustCollided = false;
 		/*var playerRect = player.getBoundingClientRect();
 		var zombieRect = this.getBoundingClientRect();
@@ -97,20 +106,29 @@ setInterval(function () {
 		/*if (isPointInsideAABB(zombieRect, playerRect)) {
 			console.log("touching");
 		}*/
-		if ($(this).offsetLeft < player.offsetLeft + player.offsetWidth &&
-			$(this).offsetLeft + $(this).offsetWidth > player.offsetLeft &&
-			$(this).offsetTop < player.offsetTop + player.offsetHeight &&
-			$(this).offsetHeight + $(this).offsetTop > player.offsetTop) {
+		var p = this;
+		/*
+		var offset = p.offset();
+		console.debug("left: " + offset.left + ", top: " + offset.top + ", width: " + offset.width + ", height: " + offset.height);
+		var playerOffset = $('#player').offset();
+		console.debug("left: " + playerOffset.left + ", top: " + playerOffset.top);
+		*/
+		console.debug(this);
+		/*
+		if (offset.left < playerOffset.left + playerOffset.width && offset.left + offset.width > playerOffset.left && offset.top < playerOffset.top + playerOffset.height && offset.height + offset.top > playerOffset.top) {
 			hasJustCollided = true;
+			console.debug("collision");
 			if (!$("player").hasClass('collision-state')) {
 				$("player").addClass('collision-state');
-				console.log("Collision detected");
+				console.debug("Collision detected");
 			}
 		} else if ($("#player").hasClass('collision-state') && !hasJustCollided) {
 			$("player").removeClass('collision-state');
 		}
+		*/
 	})
 	
+	console.groupEnd();
 }, 50)
 
 
