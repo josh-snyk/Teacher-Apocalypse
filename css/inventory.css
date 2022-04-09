@@ -1,69 +1,71 @@
 #inventory {
-	position: absolute;
-	left: 6vh;
-	z-index: 10;
+  position: absolute;
+  left: 6vh;
+  z-index: 10;
 }
-
 #inventory:hover #inventoryDisplay {
-	display: block;
+  display: block;
 }
 
 #inventoryButton {
-	background: #3D1E5C;
-	border-radius: 50%;
-	height: 4.5vh;
-	width: 4.5vh;
-	/* vertical-align: middle; */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-	cursor: pointer;
+  background: #3D1E5C;
+  border-radius: 50%;
+  height: 4.5vh;
+  width: 4.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
 }
 
 #inventoryDisplay {
-	display: none;
-	background: linear-gradient(30deg, #ABABAB 80%, #bbb 95%, #eee 98%);
-	padding: 1vh;
-	border-radius: 12px;
-	margin-top: 0.4vh;
-	max-width: 60vh;
+  display: none;
+  background: linear-gradient(30deg, #ABABAB 80%, #bbb 95%, #eee 98%);
+  padding: 1vh;
+  border-radius: 12px;
+  margin-top: 0.4vh;
+  max-width: 60vw;
 }
 
 #inventoryDisplayHeader {
-	font-size: 5vh;
-	font-weight: bold;
-	color: #3D1E5C;
-	text-align: center;
+  font-size: 5vh;
+  font-weight: bold;
+  color: #3D1E5C;
+  text-align: center;
 }
 
 #inventoryDisplayContentItems {
-	display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
 }
 
 .inventoryItem {
-	text-align: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 5vw;
+  min-width: 30px;
+  margin: 3px;
 }
 
 .inventoryItemIcon {
-	background-color: #C8C8C8;
-	border-radius: 10px;
-	height: 6vh;
-	width: 6vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  background-color: #C8C8C8;
+  border-radius: 10px;
+  height: 6vh;
+  width: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .inventoryItemIcon img {
-	height: 5vh;
+  height: 5vh;
 }
-
 .inventoryItemIcon img.uncollected {
-	opacity: 40%;
+  opacity: 40%;
 }
