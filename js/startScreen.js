@@ -18,6 +18,8 @@ $(document).ready(function () {
 		$("#outerGameInterface").css("display", "flex");
 
 		gameActive = true;
+		var floor = 5;
+		var FloorName = "FloorFive";
 	});
 
 	$("#btnQuitWindow").click(function () {

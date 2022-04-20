@@ -40,36 +40,67 @@ function keyUpHandler(e) {
 	}
 }
 
-function isPointInsideAABB(point, box) {
-	return (point.left >= box.offsetLeft && point.left <= box.offsetLeft + box.width) &&
-		(point.y >= box.minY && point.y <= box.maxY);
-}
 
 setInterval(function () {
-		if (leftPressed && gameActive) {
-			player.style.left = player.offsetLeft - playerSpeed + "px"
+	console.group("Check");
+
+	var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
+
+	$(".zombie.active").each(function () {
+		console.log("ID" + this.id);
+		console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
+		if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
+			console.log("Touching");
 		}
-		if (rightPressed && gameActive) {
-			player.style.left = player.offsetLeft + playerSpeed + "px"
+	});
+
+	var FloorName = $(".level-map.walled-room.active").attr("id");
+
+	try {
+		var map = document.getElementById(FloorName);
+		// Too High
+		if (map.offsetTop > player.offsetTop - player.offsetHeight) {
+			document.getElementById("player").style.top = map.offsetTop + player.offsetHeight / 2 + "px";
+			canMoveUp = false;
 		}
-		if (upPressed && gameActive) {
-			player.style.top = player.offsetTop - playerSpeed + "px"
+
+		// To Low
+		if (map.offsetTop + map.offsetHeight < player.offsetTop + player.offsetHeight) {
+			document.getElementById("player").style.top = map.offsetTop - player.offsetHeight / 2 + map.offsetHeight + "px";
+			canMoveDown = false;
 		}
-		if (downPressed && gameActive) {
-			player.style.top = player.offsetTop + playerSpeed + "px"
+
+		// Too Far Left
+		if (map.offsetLeft > player.offsetLeft - player.offsetWidth) {
+			document.getElementById("player").style.left = map.offsetLeft + player.offsetWidth / 2 + "px";
+			canMoveLeft = false;
+		}
+
+		// To Far Right
+		if (map.offsetLeft + map.offsetWidth < player.offsetLeft + player.offsetWidth) {
+			document.getElementById("player").style.left = map.offsetLeft - player.offsetWidth / 2 + map.offsetWidth + "px";
+			canMoveRight = false;
+		}
+	} catch(err) {
+		console.error(err.message);
 	}
 
-	$("zombie.active").each(function () {
-		var playerRect = player.getBoundingClientRect();
-		var zombieRect = this.getBoundingClientRect();
-
-		console.log("Left: " + zombieRect.left.toFixed() + ", Top: " + zombieRect.top.toFixed() + ", Width: " + zombieRect.width + ", Height: " + zombieRect.height);
-
-		if (isPointInsideAABB(zombieRect, playerRect)) {
-			console.log("touching");
-		}
-	})
+	if (leftPressed && gameActive && canMoveLeft) {
+		player.style.left = player.offsetLeft - playerSpeed + "px"
+	}
+	if (rightPressed && gameActive && canMoveRight) {
+		player.style.left = player.offsetLeft + playerSpeed + "px"
+	}
+	if (upPressed && gameActive && canMoveUp) {
+		player.style.top = player.offsetTop - playerSpeed + "px"
+	}
+	if (downPressed && gameActive && canMoveDown) {
+		player.style.top = player.offsetTop + playerSpeed + "px"
+	}
 	
+	
+
+	console.groupEnd();
 }, 50)
 
 
