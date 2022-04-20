@@ -51,8 +51,39 @@ setInterval(function () {
 		console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
 		if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
 			console.log("Touching");
-        }
+		}
 	});
+
+	var FloorName = $(".level-map.walled-room.active").attr("id");
+
+	try {
+		var map = document.getElementById(FloorName);
+		// Too High
+		if (map.offsetTop > player.offsetTop - player.offsetHeight) {
+			document.getElementById("player").style.top = map.offsetTop + player.offsetHeight / 2 + "px";
+			canMoveUp = false;
+		}
+
+		// To Low
+		if (map.offsetTop + map.offsetHeight < player.offsetTop + player.offsetHeight) {
+			document.getElementById("player").style.top = map.offsetTop - player.offsetHeight / 2 + map.offsetHeight + "px";
+			canMoveDown = false;
+		}
+
+		// Too Far Left
+		if (map.offsetLeft > player.offsetLeft - player.offsetWidth) {
+			document.getElementById("player").style.left = map.offsetLeft + player.offsetWidth / 2 + "px";
+			canMoveLeft = false;
+		}
+
+		// To Far Right
+		if (map.offsetLeft + map.offsetWidth < player.offsetLeft + player.offsetWidth) {
+			document.getElementById("player").style.left = map.offsetLeft - player.offsetWidth / 2 + map.offsetWidth + "px";
+			canMoveRight = false;
+		}
+	} catch(err) {
+		console.error(err.message);
+	}
 
 	if (leftPressed && gameActive && canMoveLeft) {
 		player.style.left = player.offsetLeft - playerSpeed + "px"
@@ -66,6 +97,8 @@ setInterval(function () {
 	if (downPressed && gameActive && canMoveDown) {
 		player.style.top = player.offsetTop + playerSpeed + "px"
 	}
+	
+	
 
 	console.groupEnd();
 }, 50)
