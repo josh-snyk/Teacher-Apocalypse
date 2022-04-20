@@ -47,7 +47,7 @@ setInterval(function () {
 	var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
 
 	$(".zombie.active").each(function () {
-		console.log("ID" + this.id);
+		console.log("ID: " + this.id);
 		console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
 		if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
 			console.log("Touching");
@@ -102,5 +102,4 @@ setInterval(function () {
 
 	console.groupEnd();
 }, 50)
-
 
