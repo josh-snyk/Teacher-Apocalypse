@@ -1,3 +1,15 @@
+#player {
+    background-color: blue; /* TEMPORARY */
+    height: 2vh;
+    width: 2vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: 5;
+    transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
+}
 zombie {
 	display: flex;
 	align-items: center;
