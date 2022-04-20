@@ -34,27 +34,45 @@ zombie .torso {
   width: 1.5vh;
 }
 zombie .arms {
+    position: absolute;
+    top: 1.3vh;
+    left: 0.5vh;
+}
+zombie .arm {
   height: 1.5vh;
-  width: 1.5vh;
+  width: 0.5vh;
+  position: absolute;
   background: #068713;
 }
 zombie .arms .left {
-  background: #068713;
+    background: #068713;
+    left: -1vh;
+    transform: rotate(10deg);
 }
 zombie .arms .right {
-  background: #068713;
+    background: #068713;
+    left: 1vh;
+    transform: rotate(350deg);
 }
 zombie .legs {
-    height: 1.5vh;
-    width: 1.5vh;
-    background: #068713;
+    position: absolute;
+    top: 2.5vh;
+    left: 0.5vh;
 }
-zombie .legs .left {
-    background: #068713;
-}
-zombie .legs .right {
-    background: #068713;
-}
+    zombie .leg {
+        height: 1.5vh;
+        width: 0.8vh;
+        background: #068713;
+        position: absolute;
+    }
+    zombie .legs .left {
+        background: #068713;
+        left: -0.5vh;
+    }
+    zombie .legs .right {
+        background: #068713;
+        left: 0.2vh;
+    }
 zombie#ZombieF5Z1 {
   position: absolute;
   top: 10vh;
