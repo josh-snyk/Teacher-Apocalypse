@@ -21,6 +21,7 @@
 	"author": "Joel Sprouse & Spencer Woods",
 	"license": "CC0-1.0",
 	"dependencies": {
+		"analytics-node": "^6.0.0",
 		"ejs": "^3.1.6",
 		"electron": "^1.4.1",
 		"electron-squirrel-startup": "^1.0.0",
@@ -36,7 +37,7 @@
 		"@electron-forge/publisher-github": "^6.0.0-beta.63",
 		"electron": "^17.1.1",
 		"electron-packager": "^15.4.0",
-		"mermaid": "^8.14.0",
+		"mermaid": "^9.0.0",
 		"update-electron-app": "^2.0.1"
 	},
 	"config": {

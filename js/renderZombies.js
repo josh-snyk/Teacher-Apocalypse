@@ -14,9 +14,11 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	this.appendChild(zombieArms);
 	var zombieArmL = document.createElement("div");
 	zombieArmL.classList.add("left");
+	zombieArmL.classList.add("arm");
 	zombieArms.appendChild(zombieArmL);
 	var zombieArmR = document.createElement("div");
 	zombieArmR.classList.add("right");
+	zombieArmR.classList.add("arm");
 	zombieArms.appendChild(zombieArmR);
 	var zombieLegs = document.createElement("div");
 	zombieLegs.classList.add("legs");
@@ -24,4 +26,7 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	var zombieLegL = document.createElement("div");
 	zombieLegL.classList.add("left");
 	zombieLegs.appendChild(zombieLegL);
+	var zombieLegR = document.creatureElement("div");
+	zombieLegR.classList.add("right");
+	zombieLegs.appendChild(zombieLegR)
 })
