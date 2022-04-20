@@ -21,16 +21,27 @@ zombie .torso {
   height: 1.5vh;
   width: 1.5vh;
 }
-zombie .arm {
+zombie .arms {
   height: 1.5vh;
   width: 1.5vh;
   background: #068713;
 }
-zombie .arm .left {
+zombie .arms .left {
   background: #068713;
 }
-zombie .arm .right {
+zombie .arms .right {
   background: #068713;
+}
+zombie .legs {
+    height: 1.5vh;
+    width: 1.5vh;
+    background: #068713;
+}
+zombie .legs .left {
+    background: #068713;
+}
+zombie .legs .right {
+    background: #068713;
 }
 zombie#ZombieF5Z1 {
   position: absolute;

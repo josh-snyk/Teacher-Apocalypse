@@ -26,4 +26,7 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	var zombieLegL = document.createElement("div");
 	zombieLegL.classList.add("left");
 	zombieLegs.appendChild(zombieLegL);
+	var zombieLegR = document.creatureElement("div");
+	zombieLegR.classList.add("right");
+	zombieLegs.appendChild(zombieLegR)
 })
