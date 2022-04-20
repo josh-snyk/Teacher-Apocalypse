@@ -40,94 +40,33 @@ function keyUpHandler(e) {
 	}
 }
 
-function checkCollision() {
-	/*
-	if ($(this).offsetLeft < player.offsetLeft + player.offsetWidth &&
-		$(this).offsetLeft + $(this).offsetWidth > player.offsetLeft &&
-		$(this).offsetTop < player.offsetTop + player.offsetHeight &&
-		$(this).offsetHeight + $(this).offsetTop > player.offsetTop) {
-		hasJustCollided = true;
-		alert("works");
-	}*/
-	/*
-	let hasJustCollided = false;
-	for (let i = 0; i < this.staticDivs.length; i++) {
-		const currentDiv = $(this).staticDivs[i];
-		if ($(this).offsetLeft < player.offsetLeft + player.offsetWidth &&
-		$(this).offsetLeft + $(this).offsetWidth > player.offsetLeft &&
-		$(this).offsetTop < player.offsetTop + player.offsetHeight &&
-		$(this).offsetHeight + $(this).offsetTop > player.offsetTop) {
-			hasJustCollided = true;
-			if (!player.classList.contains('collision-state')) {
-				player.classList.add('collision-state');
-			}
-		} else if (player.ref.classList.contains('collision-state') && !hasJustCollided) {
-			player.ref.classList.remove('collision-state');
-		}
-	}*/
-}
 
 setInterval(function () {
 	console.group("Check");
-	if (leftPressed && gameActive) {
+
+	var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
+
+	$(".zombie.active").each(function () {
+		console.log("ID" + this.id);
+		console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
+		if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
+			console.log("Touching");
+        }
+	});
+
+	if (leftPressed && gameActive && canMoveLeft) {
 		player.style.left = player.offsetLeft - playerSpeed + "px"
 	}
-	if (rightPressed && gameActive) {
+	if (rightPressed && gameActive && canMoveRight) {
 		player.style.left = player.offsetLeft + playerSpeed + "px"
 	}
-	if (upPressed && gameActive) {
+	if (upPressed && gameActive && canMoveUp) {
 		player.style.top = player.offsetTop - playerSpeed + "px"
 	}
-	if (downPressed && gameActive) {
+	if (downPressed && gameActive && canMoveDown) {
 		player.style.top = player.offsetTop + playerSpeed + "px"
 	}
 
-	//checkCollision();
-
-	var activeZombies = document.getElementsByClassName("active zombie");
-	for (let zombie in activeZombies) {
-		console.log("Zombie left" + zombie.offsetLeft);
-		console.log(zombie.offsetLeft < player.offsetLeft + player.offsetWidth && zombie.offsetLeft + zombie.offsetWidth > player.offsetLeft && zombie.offsetTop < player.offsetTop + player.offsetHeight && zombie.offsetHeight + zombie.offsetTop > player.offsetTop);
-	}
-
-	$("zombie.active").each(function () {
-		
-		console.debug("checking for collision");
-		let hasJustCollided = false;
-		/*var playerRect = player.getBoundingClientRect();
-		var zombieRect = this.getBoundingClientRect();
-
-		console.log("Left: " + zombieRect.left.toFixed() + ", Top: " + zombieRect.top.toFixed() + ", Width: " + zombieRect.width + ", Height: " + zombieRect.height);
-
-		isPointInsideAABB(zombieRect, playerRect);
-		*/
-
-
-		/*if (isPointInsideAABB(zombieRect, playerRect)) {
-			console.log("touching");
-		}*/
-		var p = this;
-		/*
-		var offset = p.offset();
-		console.debug("left: " + offset.left + ", top: " + offset.top + ", width: " + offset.width + ", height: " + offset.height);
-		var playerOffset = $('#player').offset();
-		console.debug("left: " + playerOffset.left + ", top: " + playerOffset.top);
-		*/
-		console.debug(this);
-		/*
-		if (offset.left < playerOffset.left + playerOffset.width && offset.left + offset.width > playerOffset.left && offset.top < playerOffset.top + playerOffset.height && offset.height + offset.top > playerOffset.top) {
-			hasJustCollided = true;
-			console.debug("collision");
-			if (!$("player").hasClass('collision-state')) {
-				$("player").addClass('collision-state');
-				console.debug("Collision detected");
-			}
-		} else if ($("#player").hasClass('collision-state') && !hasJustCollided) {
-			$("player").removeClass('collision-state');
-		}
-		*/
-	})
-	
 	console.groupEnd();
 }, 50)
 

@@ -15,7 +15,7 @@ zombie {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	z-index: 4;
+	z-index: 5;
 	transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
 }
 
