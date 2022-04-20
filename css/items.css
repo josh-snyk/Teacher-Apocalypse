@@ -1,78 +1,67 @@
 .bookshelf {
-	position: absolute;
-	top: 8.2vh;
+  position: absolute;
+  top: 8.2vh;
 }
+
 .shelf {
-	display: flex;
-	flex-direction: column;
-	background-color: #ed9e00;
-	background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-	padding: 10px;
-	border: solid 0.3vh #fffa;
+  display: flex;
+  flex-direction: column;
+  background-color: #ed9e00;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  /* This is mostly intended for prototyping. please download the pattern and re-host for production environments. Thank you! */
+  padding: 10px;
+  border: solid 0.3vh #fffa;
 }
-
-.book {
-	border-style: solid;
-	background: -webkit-repeating-linear-gradient(90deg, #fff, #efefef 1px, #ccc 1px, #ccc 2px);
+.shelf .book {
+  border-style: solid;
+  background: -webkit-repeating-linear-gradient(90deg, #fff, #efefef 1px, #ccc 1px, #ccc 2px);
 }
-
-.book.left {
-	border-right-style: none;
+.shelf .book.left {
+  border-right-style: none;
 }
-
-.book.right, .book.top, .book.bottom {
-	border-left-style: none;
+.shelf .book.right, .shelf .book.top, .shelf .book.bottom {
+  border-left-style: none;
 }
-
-.book.grey {
-	border-color: #777;
+.shelf .book.grey {
+  border-color: #777;
 }
-
-.book.burgandy {
-	border-color: #740000;
+.shelf .book.burgandy {
+  border-color: #740000;
 }
-
-.book.brown {
-	border-color: #8b4513;
+.shelf .book.brown {
+  border-color: #8b4513;
 }
-
-.book.red {
-	border-color: #BE1919;
+.shelf .book.red {
+  border-color: #BE1919;
 }
-
-.book.green {
-	border-color: #327727;
+.shelf .book.green {
+  border-color: #327727;
 }
 
 #FloorFive .shelf .book {
-	border-width: 1px;
-	width: 24px;
+  border-width: 1px;
+  width: 24px;
 }
 
 .table.left {
-	display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 75vh;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    bottom: 10vh;
-    position: absolute;
-}
-
-.computer {
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 75vh;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  bottom: 10vh;
+  position: absolute;
 }
 
 .left .computer img {
-	transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .computerMouse {
-	width: 0.03vh;
-	height: 0.2vh;
-	background-color: #000;
-	border-radius: 6px;
-	transform: rotate(-90deg);
+  width: 0.03vh;
+  height: 0.2vh;
+  background-color: #000;
+  border-radius: 6px;
+  transform: rotate(-90deg);
 }
