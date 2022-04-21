@@ -20,6 +20,7 @@ $(document).ready(function () {
 		gameActive = true;
 		var floor = 5;
 		var FloorName = "FloorFive";
+		loadLevel(5);
 	});
 
 	$("#btnQuitWindow").click(function () {

@@ -1,8 +1,7 @@
 function loadLevel(Floor) {
+    var floor = Floor;
     if (Floor == 5) {
-        const zombie51 = document.createElement("zombie");
-        zombie51.id = "zombie51";
-        document.body.appendChild(zombie51);
-        $("#zombie51").addClass(" zombie");
+        $("#ZombieF5Z1").addClass(" active");
+        var FloorName = "FloorFive";
     }
 }

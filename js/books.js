@@ -66,3 +66,14 @@ $("#FloorFive .shelf .book").each(function () {
 	//console.groupEnd();
 	BookID++;
 });
+
+$(".staircase").each(function () {
+	var stairCount = $(this).attr("staircount");
+	var i = 0;
+	while (i < stairCount) {
+		var stair = document.createElement("div");
+		stair.classList.add("stair");
+		this.appendChild(stair);
+		i++;
+	}
+});

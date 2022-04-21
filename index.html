@@ -144,8 +144,8 @@
 			<p id="playerHealthNumber">100%</p>
 		</div>
 		<div id="FloorFive" class="level-map walled-room">
-			<zombie id="ZombieF5Z1" class="active zombie" health=5></zombie>
-			<zombie id="ZombieF5Z2" class="active zombie" health=5></zombie>
+			<zombie id="ZombieF5Z1" class="zombie" health="5" attack="5" killpoints="10" speed="5"></zombie>
+			<zombie id="ZombieF5Z2" class="zombie" health="5" attack="5" killpoints="10" speed="5"></zombie>
 			<div id="FloorFiveDoor" class="door"></div>
 			<div id="WallF5W1" class="wall"></div>
 			<div class="bookshelf" style="top: 8.5vh; position: absolute;">
@@ -225,9 +225,11 @@
 					<div class="book left colour"></div>
 				</div>
 			</div>
+			<div id="StaircaseF54" class="staircase" staircount="6"></div>
 		</div> <!-- End of Floor Five Map -->
 
 		<div id="FloorFour" class="level-map walled-room">
+			<zombie id="ZombieF4Z1" class="zombie" health=5></zombie>
 			<room>
 				<div class="table left">
 					<computer></computer>
