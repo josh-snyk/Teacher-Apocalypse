@@ -34,3 +34,6 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 });
 
 // Move Zombies
+setInterval(function () {
+
+}, 50)
