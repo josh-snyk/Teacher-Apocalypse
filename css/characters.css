@@ -14,8 +14,9 @@ zombie {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	z-index: 5;
+	z-index: 4;
 	transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
+    width: 2.9vh;
 }
 zombie .head {
   height: 1.1vh;
@@ -36,32 +37,32 @@ zombie .torso {
 zombie .arms {
     position: absolute;
     top: 1.3vh;
-    left: 0.5vh;
+    left: 0.55vh;
 }
 zombie .arm {
-  height: 1.5vh;
-  width: 0.5vh;
+  height: 1.3vh;
+  width: 0.45vh;
   position: absolute;
   background: #068713;
 }
 zombie .arms .left {
     background: #068713;
-    left: -1vh;
+    left: -0.25vh;
     transform: rotate(10deg);
 }
 zombie .arms .right {
     background: #068713;
-    left: 1vh;
-    transform: rotate(350deg);
+    left: 1.65vh;
+    transform: rotate(345deg);
 }
 zombie .legs {
     position: absolute;
-    top: 2.5vh;
-    left: 0.5vh;
+    top: 2.7vh;
+    left: 1.2vh;
 }
     zombie .leg {
-        height: 1.5vh;
-        width: 0.8vh;
+        height: 1.45vh;
+        width: 0.6vh;
         background: #068713;
         position: absolute;
     }
@@ -71,7 +72,7 @@ zombie .legs {
     }
     zombie .legs .right {
         background: #068713;
-        left: 0.2vh;
+        left: 0.35vh;
     }
 zombie#ZombieF5Z1 {
   position: absolute;
