@@ -28,7 +28,8 @@
   margin: auto;
 }
 .level-map.active {
-  display: flex;
+    display: flex;
+    /*cursor: none;*/
 }
 
 .btnGameInterface img {

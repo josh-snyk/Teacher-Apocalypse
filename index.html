@@ -36,6 +36,7 @@
 	<link rel="stylesheet" href="css/startScreen.css">
 	<link rel="stylesheet" href="css/characters.css">
 	<link rel="stylesheet" href="css/items.css">
+	<link rel="stylesheet" href="css/items.scss">
 	<link rel="stylesheet" href="css/walls.css">
 	<link rel="stylesheet" href="css/doors.css">
 	<link rel="stylesheet" href="css/gameInterface.css">
@@ -103,10 +104,10 @@
 						</div>
 						<div class="inventoryItem">
 							<div class="inventoryItemIcon">
-								<img src="media/fire-extinguisher.svg" alt="Fire Extinguisher" class="uncollected">
+								<img src="media/fire-extinguisher.svg" alt="fire" class="uncollected">
 							</div>
 							<div class="inventoryItemName">
-								Fire Extinguisher
+								Fire extinguisher
 							</div>
 						</div>
 						<div class="inventoryItem">
@@ -200,7 +201,6 @@
 					<div class="book right colour"></div>
 					<div class="book right colour"></div>
 				</div>
-
 				<div class="shelf">
 					<div class="book left colour"></div>
 					<div class="book left colour"></div>
@@ -280,15 +280,19 @@
 	<script src="js/fullscreen.js"></script>
 	<script src="js/startScreen.js"></script>
 	<script src="js/pauseGame.js"></script>
-	<script>
-		loadMessageUpdate("Putting books on bookshelves")
-	</script>
+
 	<script src="js/inventory.js"></script>
 	<script>
 		loadMessageUpdate("Loading Levels")
 	</script>
 	<script src="js/loadLevels.js"></script>
+	<script>
+		loadMessageUpdate("Putting books on bookshelves")
+	</script>
 	<script src="js/books.js"></script>
+	<script>
+		loadMessageUpdate("<s>Giving</s> Removing the zombies' brains")
+	</script>
 	<script src="js/renderZombies.js"></script>
 	<script src="js/renderComputers.js"></script>
 	<script>
@@ -300,7 +304,7 @@
 	</script>
 	<script src="js/damage.js"></script>
 	<script>
-		if (load == 10) {
+		if (load == 11) {
 			loadMessageUpdate("Starting Game");
 			$("#loadScreen").fadeOut(1000);
 			$("#startScreen").css("display", "flex");

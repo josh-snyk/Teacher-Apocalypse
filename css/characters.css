@@ -1,9 +1,22 @@
+#player {
+    background-color: blue; /* TEMPORARY */
+    height: 2vh;
+    width: 2vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: 5;
+    transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
+}
 zombie {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	z-index: 5;
+	z-index: 4;
 	transition: left ease-in-out 0.01s, top ease-in-out 0.01s;
+    width: 2.9vh;
 }
 zombie .head {
   height: 1.1vh;
@@ -22,27 +35,45 @@ zombie .torso {
   width: 1.5vh;
 }
 zombie .arms {
-  height: 1.5vh;
-  width: 1.5vh;
+    position: absolute;
+    top: 1.3vh;
+    left: 0.55vh;
+}
+zombie .arm {
+  height: 1.3vh;
+  width: 0.45vh;
+  position: absolute;
   background: #068713;
 }
 zombie .arms .left {
-  background: #068713;
+    background: #068713;
+    left: -0.25vh;
+    transform: rotate(10deg);
 }
 zombie .arms .right {
-  background: #068713;
+    background: #068713;
+    left: 1.65vh;
+    transform: rotate(345deg);
 }
 zombie .legs {
-    height: 1.5vh;
-    width: 1.5vh;
-    background: #068713;
+    position: absolute;
+    top: 2.7vh;
+    left: 1.2vh;
 }
-zombie .legs .left {
-    background: #068713;
-}
-zombie .legs .right {
-    background: #068713;
-}
+    zombie .leg {
+        height: 1.45vh;
+        width: 0.6vh;
+        background: #068713;
+        position: absolute;
+    }
+    zombie .legs .left {
+        background: #068713;
+        left: -0.5vh;
+    }
+    zombie .legs .right {
+        background: #068713;
+        left: 0.35vh;
+    }
 zombie#ZombieF5Z1 {
   position: absolute;
   top: 10vh;

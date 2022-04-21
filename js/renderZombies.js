@@ -1,4 +1,3 @@
-// JavaScript source code
 $("zombie").each(function () { // Every time zombie is seen in html file, the code below will run
 	var zombieHead = document.createElement("div");
 	zombieHead.classList.add("head");
@@ -25,8 +24,10 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	this.appendChild(zombieLegs);
 	var zombieLegL = document.createElement("div");
 	zombieLegL.classList.add("left");
+	zombieLegL.classList.add("leg");
 	zombieLegs.appendChild(zombieLegL);
-	var zombieLegR = document.creatureElement("div");
+	var zombieLegR = document.createElement("div");
 	zombieLegR.classList.add("right");
-	zombieLegs.appendChild(zombieLegR)
-})
+	zombieLegR.classList.add("leg");
+	zombieLegs.appendChild(zombieLegR);
+});
