@@ -1,3 +1,4 @@
+// Render Zombies
 $("zombie").each(function () { // Every time zombie is seen in html file, the code below will run
 	var zombieHead = document.createElement("div");
 	zombieHead.classList.add("head");
@@ -31,3 +32,5 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	zombieLegR.classList.add("leg");
 	zombieLegs.appendChild(zombieLegR);
 });
+
+// Move Zombies
