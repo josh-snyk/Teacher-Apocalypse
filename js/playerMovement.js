@@ -2,7 +2,6 @@
 var upPressed, rightPressed, downPressed, leftPressed, spacePressed = false;
 var player = document.getElementById("player");
 
-var zombieSpeed = 5;
 var score = 0;
 var totalZombies = 2; // Number of zombies on the level
 var playerSpeed = 4;
@@ -42,76 +41,78 @@ function keyUpHandler(e) {
 
 
 setInterval(function () {
-	console.group("Check");
+	if (gameActive == true) {
+		console.group("Check");
 
-	var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
+		var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
 
-	$(".zombie.active").each(function () {
-		console.log("ID: " + this.id);
-		console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
-		if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
-			console.log("Touching");
-		}
-	});
+		$(".zombie.active").each(function () {
+			console.log("ID: " + this.id);
+			console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
+			if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
+				console.log("Touching");
+			}
+		});
 
-	var FloorName = $(".level-map.walled-room.active").attr("id");
+		var FloorName = $(".level-map.walled-room.active").attr("id");
 
-	try {
-		var map = document.getElementById(FloorName);
-		// Too High
-		if (map.offsetTop > player.offsetTop - player.offsetHeight / 2) {
-			document.getElementById("player").style.top = map.offsetTop + player.offsetHeight / 2 + "px";
-			canMoveUp = false;
-		}
-		if (map.offsetTop + 1 == player.offsetTop - player.offsetHeight / 2) {
-			canMoveUp = false;
+		try {
+			var map = document.getElementById(FloorName);
+			// Too High
+			if (map.offsetTop > player.offsetTop - player.offsetHeight / 2) {
+				document.getElementById("player").style.top = map.offsetTop + player.offsetHeight / 2 + "px";
+				canMoveUp = false;
+			}
+			if (map.offsetTop + 1 == player.offsetTop - player.offsetHeight / 2) {
+				canMoveUp = false;
+			}
+
+			// To Low
+			if (map.offsetTop + map.offsetHeight < player.offsetTop + player.offsetHeight / 2) {
+				document.getElementById("player").style.top = map.offsetTop - player.offsetHeight / 2 + map.offsetHeight + "px";
+				canMoveDown = false;
+			}
+			if (map.offsetTop + map.offsetHeight + 1 == player.offsetTop + player.offsetHeight / 2) {
+				canMoveDown = false;
+			}
+
+			// Too Far Left
+			if (map.offsetLeft > player.offsetLeft - player.offsetWidth / 2) {
+				document.getElementById("player").style.left = map.offsetLeft + player.offsetWidth / 2 + "px";
+				canMoveLeft = false;
+			}
+			if (map.offsetLeft + 1 == player.offsetLeft - player.offsetWidth / 2) {
+				canMoveLeft = false;
+			}
+
+			// To Far Right
+			if (map.offsetLeft + map.offsetWidth < player.offsetLeft + player.offsetWidth / 2) {
+				document.getElementById("player").style.left = map.offsetLeft - player.offsetWidth / 2 + map.offsetWidth + "px";
+				canMoveRight = false;
+			}
+			if (map.offsetLeft + map.offsetWidth - 1 == player.offsetLeft + player.offsetWidth / 2) {
+				canMoveRight = false;
+			}
+		} catch (err) {
+			console.error(err.message);
 		}
 
-		// To Low
-		if (map.offsetTop + map.offsetHeight < player.offsetTop + player.offsetHeight / 2) {
-			document.getElementById("player").style.top = map.offsetTop - player.offsetHeight / 2 + map.offsetHeight + "px";
-			canMoveDown = false;
+		if (leftPressed && gameActive && canMoveLeft) {
+			player.style.left = player.offsetLeft - playerSpeed + "px"
 		}
-		if (map.offsetTop + map.offsetHeight + 1 == player.offsetTop + player.offsetHeight / 2) {
-			canMoveDown = false;
+		if (rightPressed && gameActive && canMoveRight) {
+			player.style.left = player.offsetLeft + playerSpeed + "px"
 		}
-
-		// Too Far Left
-		if (map.offsetLeft > player.offsetLeft - player.offsetWidth / 2) {
-			document.getElementById("player").style.left = map.offsetLeft + player.offsetWidth / 2 + "px";
-			canMoveLeft = false;
+		if (upPressed && gameActive && canMoveUp) {
+			player.style.top = player.offsetTop - playerSpeed + "px"
 		}
-		if (map.offsetLeft + 1 == player.offsetLeft - player.offsetWidth / 2) {
-			canMoveLeft = false;
+		if (downPressed && gameActive && canMoveDown) {
+			player.style.top = player.offsetTop + playerSpeed + "px"
 		}
-
-		// To Far Right
-		if (map.offsetLeft + map.offsetWidth < player.offsetLeft + player.offsetWidth / 2) {
-			document.getElementById("player").style.left = map.offsetLeft - player.offsetWidth / 2 + map.offsetWidth + "px";
-			canMoveRight = false;
-		}
-		if (map.offsetLeft + map.offsetWidth - 1 == player.offsetLeft + player.offsetWidth / 2) {
-			canMoveRight = false;
-		}
-	} catch(err) {
-		console.error(err.message);
-	}
-
-	if (leftPressed && gameActive && canMoveLeft) {
-		player.style.left = player.offsetLeft - playerSpeed + "px"
-	}
-	if (rightPressed && gameActive && canMoveRight) {
-		player.style.left = player.offsetLeft + playerSpeed + "px"
-	}
-	if (upPressed && gameActive && canMoveUp) {
-		player.style.top = player.offsetTop - playerSpeed + "px"
-	}
-	if (downPressed && gameActive && canMoveDown) {
-		player.style.top = player.offsetTop + playerSpeed + "px"
-	}
 	
 	
 
-	console.groupEnd();
+		console.groupEnd();
+	}
 }, 10)
 
