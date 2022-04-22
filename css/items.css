@@ -3,6 +3,12 @@
   top: 8.2vh;
 }
 
+#F5Bookshelf1 {
+    top: 8.5vh;
+    position: absolute;
+    height: 75vh;
+}
+
 .shelf {
   display: flex;
   flex-direction: column;
