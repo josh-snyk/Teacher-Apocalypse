@@ -42,15 +42,15 @@ function keyUpHandler(e) {
 
 setInterval(function () {
 	if (gameActive == true) {
-		console.group("Check");
+		//console.group("Check");
 
-		var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
+		var canMoveLeft, canMoveUp, canMoveDown, canMoveRight = true;
 
 		$(".zombie.active").each(function () {
-			console.log("ID: " + this.id);
-			console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
+			//console.log("ID: " + this.id);
+			//console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
 			if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
-				console.log("Touching");
+				//console.log("Touching");
 			}
 		});
 
@@ -112,7 +112,7 @@ setInterval(function () {
 	
 	
 
-		console.groupEnd();
+		//console.groupEnd();
 	}
 }, 10)
 
