@@ -1,3 +1,12 @@
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/alerts/)
+[![Language grade: TypeScript](https://img.shields.io/lgtm/grade/typescript/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/context:typescript)
+[![Language grade: HTML](https://img.shields.io/lgtm/grade/html/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/context:html)
+[![Language grade: CSS](https://img.shields.io/lgtm/grade/css/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/context:css)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/context:javascript)
+[![Language grade: TypeScript](https://img.shields.io/lgtm/grade/typescript/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher-Apocalypse/context:typescript)
+[![Language grade: HTML](https://img.shields.io/lgtm/grade/html/g/14sprouj/Teacher-Apocalypse.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/14sprouj/Teacher
+[![Repo Size](https://img.shields.io/github/languages/code-size/14sprouj/Teacher-Apocalypse)](https://img.shields.io/github/languages/code-size/14sprouj/Teacher-Apocalypse)
 # What is this?
 This is a project co-designed/co-developed by two college students in London who are studying Level BTEC in IT Diploma.
 
