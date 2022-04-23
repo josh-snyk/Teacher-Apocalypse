@@ -1,5 +1,9 @@
 // JavaScript source code
-var upPressed, rightPressed, downPressed, leftPressed, spacePressed = false;
+var upPressed = false;
+var rightPressed = false;
+var downPressed = false;
+var leftPressed = false;
+var spacePressed = false;
 var player = document.getElementById("player");
 
 var score = 0;
@@ -44,7 +48,10 @@ setInterval(function () {
 	if (gameActive == true) {
 		//console.group("Check");
 
-		var canMoveLeft, canMoveUp, canMoveDown, canMoveRight = true;
+		var canMoveLeft = true;
+		var canMoveUp = true;
+		var canMoveDown = true;
+		var canMoveRight = true;
 
 		$(".zombie.active").each(function () {
 			//console.log("ID: " + this.id);
@@ -109,9 +116,6 @@ setInterval(function () {
 		if (downPressed && gameActive && canMoveDown) {
 			player.style.top = player.offsetTop + playerSpeed + "px"
 		}
-	
-	
-
 		//console.groupEnd();
 	}
 }, 10)
