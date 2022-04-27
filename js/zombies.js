@@ -38,9 +38,8 @@ setInterval(function () {
 	$("zombie.active").each(function () {
 		console.group("Zombie " + this.id + " and Player Distances");
 		var playerCentX = player.offsetLeft + (player.offsetWidth / 2);
-		var zombieCentX = this.offsetLeft + (this.offsetWidth / 2);
-		var zombiePlayerXDistance = zombieCentX - playerCentX;
 		var playerCentY = player.offsetTop + (player.offsetHeight / 2);
+		var zombieCentX = this.offsetLeft + (this.offsetWidth / 2);
 		var zombieCentY = this.offsetTop + (this.offsetHeight / 2);
 
 		var angle = Math.asin((zombieCentX - playerCentX) / Math.sqrt((zombieCentX - playerCentX) * (zombieCentX - playerCentX) + (zombieCentY - playerCentY) * (zombieCentY - playerCentY)));

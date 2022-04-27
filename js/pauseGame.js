@@ -1,4 +1,4 @@
-// JavaScript source code
+// For pause functionality
 
 $("#btnPause").click(function () {
     $("#outerGameInterface").css("filter", "blur(4px)");

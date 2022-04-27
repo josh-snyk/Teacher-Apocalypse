@@ -1,4 +1,4 @@
-// JavaScript source code
+// Player movement
 var upPressed = false;
 var rightPressed = false;
 var downPressed = false;

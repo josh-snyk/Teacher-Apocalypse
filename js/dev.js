@@ -1,4 +1,4 @@
-// JavaScript source code
+// Tempory functions for developers which will be removed for production environment
 $("#btnNextLevel").click(function () {
     var nextLevel = floor - 1;
     loadLevel(nextLevel);

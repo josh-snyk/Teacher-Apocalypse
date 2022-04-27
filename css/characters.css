@@ -61,20 +61,20 @@ zombie .legs {
     top: 2.7vh;
     left: 1.2vh;
 }
-    zombie .leg {
-        height: 1.45vh;
-        width: 0.6vh;
-        background: #068713;
-        position: absolute;
-    }
-    zombie .legs .left {
-        background: #068713;
-        left: -0.5vh;
-    }
-    zombie .legs .right {
-        background: #068713;
-        left: 0.35vh;
-    }
+zombie .leg {
+    height: 1.45vh;
+    width: 0.6vh;
+    background: #068713;
+    position: absolute;
+}
+zombie .legs .left {
+    background: #068713;
+    left: -0.5vh;
+}
+zombie .legs .right {
+    background: #068713;
+    left: 0.35vh;
+}
 zombie#ZombieF5Z1 {
   position: absolute;
   top: 10vh;
