@@ -81,14 +81,14 @@ GameTitle {
 
 #btnQuitWindow {
     min-width: 100px;
-    height: 30px;
+    height: 35px;
     background-color: #ff0000;
     border-radius: 10px;
     border: 1px solid #000000;
     font-size: 15px;
     font-family: "Arial";
     font-weight: Bold;
-    color: #ff6a00;
+    color: #000000;
     text-align: center;
     cursor: pointer;
     transition: ease-in-out;
