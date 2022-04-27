@@ -1,6 +1,6 @@
-// JavaScript source code
+// For pause functionality
 
-$("#pauseButton").click(function () {
+$("#btnPause").click(function () {
     $("#outerGameInterface").css("filter", "blur(4px)");
     $("#pauseMenu").css("display", "flex");
     gameActive = false;

@@ -1,5 +1,9 @@
-// JavaScript source code
-var upPressed, rightPressed, downPressed, leftPressed, spacePressed = false;
+// Player movement
+var upPressed = false;
+var rightPressed = false;
+var downPressed = false;
+var leftPressed = false;
+var spacePressed = false;
 var player = document.getElementById("player");
 
 var score = 0;
@@ -42,15 +46,18 @@ function keyUpHandler(e) {
 
 setInterval(function () {
 	if (gameActive == true) {
-		console.group("Check");
+		//console.group("Check");
 
-		var canMoveLeft = canMoveUp = canMoveDown = canMoveRight = true;
+		var canMoveLeft = true;
+		var canMoveUp = true;
+		var canMoveDown = true;
+		var canMoveRight = true;
 
 		$(".zombie.active").each(function () {
-			console.log("ID: " + this.id);
-			console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
+			//console.log("ID: " + this.id);
+			//console.log(this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop);
 			if (this.offsetLeft < player.offsetLeft + player.offsetWidth && this.offsetLeft + this.offsetWidth > player.offsetLeft && this.offsetTop < player.offsetTop + player.offsetHeight && this.offsetHeight + this.offsetTop > player.offsetTop) {
-				console.log("Touching");
+				//console.log("Touching");
 			}
 		});
 
@@ -109,10 +116,7 @@ setInterval(function () {
 		if (downPressed && gameActive && canMoveDown) {
 			player.style.top = player.offsetTop + playerSpeed + "px"
 		}
-	
-	
-
-		console.groupEnd();
+		//console.groupEnd();
 	}
 }, 10)
 

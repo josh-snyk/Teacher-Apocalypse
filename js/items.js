@@ -47,7 +47,17 @@ $("#FloorFour room").each(function () {
 
 		})
 	})
-})
+});
+
+// Bookshelves
+$(".bookshelf").each(function () {
+	var bookshelfID = this.id;
+	var shelfHeight = 100 / ($(this).attr("shelves"));
+	console.log(shelfHeight);
+	console.log("#" + bookshelfID + " .shelf");
+	$("#" + bookshelfID + " .shelf").css("height", "calc(" + shelfHeight + "% - 20px - 0.6vh)");
+	$(this).addClass("obsticle");
+});
 
 // Books
 var BookID = 1;

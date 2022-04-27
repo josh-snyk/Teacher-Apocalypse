@@ -31,12 +31,11 @@
 	<script>
 		load++;
 	</script>
-
+	<link rel="stylesheet" href="css/dev.css" />
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/startScreen.css">
 	<link rel="stylesheet" href="css/characters.css">
 	<link rel="stylesheet" href="css/items.css">
-	<link rel="stylesheet" href="css/items.scss">
 	<link rel="stylesheet" href="css/walls.css">
 	<link rel="stylesheet" href="css/doors.css">
 	<link rel="stylesheet" href="css/gameInterface.css">
@@ -81,12 +80,12 @@
 	</div>
 	<div id="outerGameInterface">
 		<div id="player"></div>
-		<div id="pauseButton" class="btnGameInterface">
+		<div id="btnPause" class="btnGameInterface">
 			<img src="media/pause.svg" alt="Pause">
 		</div>
 		<div id="inventory">
 			<div id="inventoryButton" class="btnGameInterface">
-				<img src="media/box-open.svg">
+				<img src="media/box-open.svg" alt="Inventory">
 			</div>
 			<div id="inventoryDisplay">
 				<div id="inventoryDisplayHeader">
@@ -143,12 +142,17 @@
 			<div id="playerHealthBarFill"></div>
 			<p id="playerHealthNumber">100%</p>
 		</div>
+		<!-- For Testing Purposes -->
+		<button id="btnPreviousLevel">Previous Level</button>
+		<button id="btnNextLevel">Next Level</button>
+
+
 		<div id="FloorFive" class="level-map walled-room">
 			<zombie id="ZombieF5Z1" class="zombie" health="5" attack="5" killpoints="10" speed="5"></zombie>
 			<zombie id="ZombieF5Z2" class="zombie" health="5" attack="5" killpoints="10" speed="5"></zombie>
 			<div id="FloorFiveDoor" class="door"></div>
 			<div id="WallF5W1" class="wall"></div>
-			<div class="bookshelf" style="top: 8.5vh; position: absolute;">
+			<div id="F5Bookshelf1" class="bookshelf" shelves="3">
 				<div class="shelf">
 					<script>
 						loadMessageUpdate("Putting the books on the shelves");
@@ -277,6 +281,7 @@
 		</div>
 	</div>
 
+	<script src="js/dev.js"></script>
 	<script>
 		loadMessageUpdate("Setting Up Fullscreen")
 	</script>

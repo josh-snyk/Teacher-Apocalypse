@@ -7,16 +7,18 @@
 }
 
 #pauseMenu {
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0);
-  transition: filter 2s;
-  height: fit-content;
-  width: fit-content;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0);
+    transition: filter 2s;
+    height: fit-content;
+    height: -moz-fit-content;
+    width: fit-content;
+    width: -moz-fit-content
 }
 
 .level-map {
@@ -37,7 +39,7 @@
   max-height: 75%;
 }
 
-#pauseButton {
+#btnPause {
   position: absolute;
   left: 0.1vh;
   top: 0.1vh;

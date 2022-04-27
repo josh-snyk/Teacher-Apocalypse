@@ -18,7 +18,7 @@ $(document).ready(function () {
 		$("#outerGameInterface").css("display", "flex");
 
 		gameActive = true;
-		var floor = 5;
+		floor = 5;
 		var FloorName = "FloorFive";
 		loadLevel(5);
 	});
