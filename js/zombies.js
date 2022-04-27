@@ -37,13 +37,21 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 setInterval(function () {
 	$("zombie.active").each(function () {
 		console.group("Zombie " + this.id + " and Player Distances");
-		var playerCentX = player.offsetLeft + player.offsetWidth / 2;
-		var zombieCentX = this.offsetLeft + this.offsetWidth / 2;
+		var playerCentX = player.offsetLeft + (player.offsetWidth / 2);
+		var zombieCentX = this.offsetLeft + (this.offsetWidth / 2);
 		var zombiePlayerXDistance = zombieCentX - playerCentX;
-		var playerCentY = player.offsetTop + player.offsetHeight / 2;
-		var zombieCentY = this.offsetTop + this.offsetHeight / 2;
-		var zombiePlayerYDistance = zombieCentY - playerCentY;
-		console.log(zombiePlayerXDistance + "," + zombiePlayerYDistance);
+		var playerCentY = player.offsetTop + (player.offsetHeight / 2);
+		var zombieCentY = this.offsetTop + (this.offsetHeight / 2);
+
+		var angle = Math.asin((zombieCentX - playerCentX) / Math.sqrt((zombieCentX - playerCentX) * (zombieCentX - playerCentX) + (zombieCentY - playerCentY) * (zombieCentY - playerCentY)));
+		if (playerCentX < zombieCentX && playerCentY < zombieCentY) {
+			angle = Math.PI - angle;
+		}
+		if (playerCentX < zombieCentX && playerCentY >= zombieCentY) {
+			angle = -Math.PI - angle;
+		}
+		var direction = (-angle / Math.PI) * 1;
+		console.log("Direction: " + direction + "&deg;");
 		console.groupEnd();
     })
 }, 50)
