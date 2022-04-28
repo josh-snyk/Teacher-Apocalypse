@@ -33,6 +33,23 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	zombieLegs.appendChild(zombieLegR);
 });
 
+function getHypotenuse(zombieX, zombieY, playerX, playerY) {
+	var hypotenuse = Math.sqrt((zombieX - playerX) * (zombieX - playerX) + (zombieY - playerY) * (zombieY - playerY));
+	console.log("Distance: " + hypotenuse + "px");
+	return hypotenuse;
+}
+
+function getAngle(zombieX, zombieY, playerX, playerY) {
+	var angle = Math.asin((zombieY - playerY) / getHypotenuse(zombieX, zombieY, playerX, playerY));
+	if (playerX < zombieX && playerY < zombieY) {
+		angle = Math.PI - angle;
+	}
+	if (playerX < zombieX && playerY >= zombieY) {
+		angle = -Math.PI - angle;
+	}
+	return -angle / Math.PI;
+}
+
 // Move Zombies
 setInterval(function () {
 	$("zombie.active").each(function () {
@@ -42,14 +59,7 @@ setInterval(function () {
 		var zombieCentX = this.offsetLeft + (this.offsetWidth / 2);
 		var zombieCentY = this.offsetTop + (this.offsetHeight / 2);
 
-		var angle = Math.asin((zombieCentX - playerCentX) / Math.sqrt((zombieCentX - playerCentX) * (zombieCentX - playerCentX) + (zombieCentY - playerCentY) * (zombieCentY - playerCentY)));
-		if (playerCentX < zombieCentX && playerCentY < zombieCentY) {
-			angle = Math.PI - angle;
-		}
-		if (playerCentX < zombieCentX && playerCentY >= zombieCentY) {
-			angle = -Math.PI - angle;
-		}
-		var direction = (-angle / Math.PI) * 1;
+		var direction = getAngle(zombieCentX, zombieCentY, playerCentX, playerCentY);
 		console.log("Direction: " + direction + "&deg;");
 		console.groupEnd();
     })
