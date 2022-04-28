@@ -74,7 +74,7 @@ setInterval(function () {
 				canMoveUp = false;
 			}
 
-			// To Low
+			// Too Low
 			if (map.offsetTop + map.offsetHeight < player.offsetTop + player.offsetHeight / 2) {
 				document.getElementById("player").style.top = map.offsetTop - player.offsetHeight / 2 + map.offsetHeight + "px";
 				canMoveDown = false;
@@ -92,7 +92,7 @@ setInterval(function () {
 				canMoveLeft = false;
 			}
 
-			// To Far Right
+			// Too Far Right
 			if (map.offsetLeft + map.offsetWidth < player.offsetLeft + player.offsetWidth / 2) {
 				document.getElementById("player").style.left = map.offsetLeft - player.offsetWidth / 2 + map.offsetWidth + "px";
 				canMoveRight = false;

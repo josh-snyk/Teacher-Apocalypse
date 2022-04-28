@@ -59,8 +59,14 @@ setInterval(function () {
 		var zombieCentX = this.offsetLeft + (this.offsetWidth / 2);
 		var zombieCentY = this.offsetTop + (this.offsetHeight / 2);
 
+		var zombieBlocked = false;
+
 		var direction = getAngle(zombieCentX, zombieCentY, playerCentX, playerCentY);
-		console.log("Direction: " + direction + "&deg;");
+		console.log("Direction: " + (direction * (180 / Math.PI)) + "&deg;");
+		var speed = parseInt($(this).attr("speed"));
+		console.log("Speed: " + speed);
+		this.style.left = this.offsetLeft + (speed * Math.cos(direction * Math.PI)) + "px";
+		this.style.top = this.offsetTop + (speed * Math.sin(direction * Math.PI)) + "px";
 		console.groupEnd();
     })
 }, 50)
