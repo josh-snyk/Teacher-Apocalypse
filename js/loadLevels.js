@@ -5,7 +5,7 @@ function loadLevel(Floor) {
     
     if (Floor == 5) {
         var FloorName = "FloorFive";
-        document.getElementById(FloorName).classList.add(" active")
+        document.getElementById(FloorName).classList.add("active")
     }
 
     if (Floor == 4) {
