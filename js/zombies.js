@@ -40,14 +40,7 @@ function getHypotenuse(zombieX, zombieY, playerX, playerY) {
 }
 
 function getAngle(zombieX, zombieY, playerX, playerY) {
-	var angle = Math.asin((zombieY - playerY) / getHypotenuse(zombieX, zombieY, playerX, playerY));
-	if (playerX < zombieX && playerY < zombieY) {
-		angle = Math.PI - angle;
-	}
-	if (playerX < zombieX && playerY >= zombieY) {
-		angle = -Math.PI - angle;
-	}
-	return -angle / Math.PI;
+	
 }
 
 // Move Zombies
@@ -61,12 +54,27 @@ setInterval(function () {
 
 		var zombieBlocked = false;
 
-		var direction = getAngle(zombieCentX, zombieCentY, playerCentX, playerCentY);
+		var hypotenuse = Math.sqrt((zombieCentX - playerCentX) * (zombieCentX - playerCentX) + (zombieCentY - playerCentY) * (zombieCentY - playerCentY));
+		console.log("Distance: " + hypotenuse + "px");
+		
+		var angle = Math.asin((zombieCentY - playerCentY) / hypotenuse);
+		if (playerCentX < zombieCentX && playerCentY < zombieCentY) {
+			angle = Math.PI - angle;
+		}
+		if (playerCentX < zombieCentX && playerCentY >= zombieCentY) {
+			angle = -Math.PI - angle;
+		}
+		var direction = -angle / Math.PI;
+		
 		console.log("Direction: " + (direction * (180 / Math.PI)) + "&deg;");
 		var speed = parseInt($(this).attr("speed"));
 		console.log("Speed: " + speed);
 		this.style.left = this.offsetLeft + (speed * Math.cos(direction * Math.PI)) + "px";
 		this.style.top = this.offsetTop + (speed * Math.sin(direction * Math.PI)) + "px";
+		if (hypotenuse < 30) {
+			var health = $(this).attr("attack");
+			deductPlayerHealth(health);
+        }
 		console.groupEnd();
     })
 }, 50)
