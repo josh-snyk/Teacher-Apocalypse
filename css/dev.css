@@ -1,10 +1,10 @@
-﻿button#btnNextLevel {
+﻿#btnNextLevel {
     position: absolute;
     right: 5vh;
     bottom: 1vh;
 }
 
-button#btnPreviousLevel {
+#btnPreviousLevel {
     position: absolute;
     right: 15vh;
     bottom: 1vh;

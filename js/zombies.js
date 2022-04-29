@@ -69,6 +69,7 @@ setInterval(function () {
 		console.log("Direction: " + (direction * (180 / Math.PI)) + "&deg;");
 		var speed = parseInt($(this).attr("speed"));
 		console.log("Speed: " + speed);
+		speed = speed / 0.9;
 		this.style.left = this.offsetLeft + (speed * Math.cos(direction * Math.PI)) + "px";
 		this.style.top = this.offsetTop + (speed * Math.sin(direction * Math.PI)) + "px";
 		if (hypotenuse < 30) {

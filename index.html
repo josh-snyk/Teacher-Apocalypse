@@ -61,8 +61,8 @@
 		<GameTitle>Teacher Apocalypse</GameTitle>
 
 		<div id="startScreenBtns">
-			<button class="btn btn-primary" id="btnStartGame">Start</button>
-			<button id="btnQuitWindow">Quit</button>
+			<a href="floor5.html" id="btnStartGame">Start</a>
+			<button class="btnQuitWindow">Quit</button>
 		</div>
 		<div id="quitModal">
 			<div id="quitScreen">
@@ -74,203 +74,20 @@
 			</div>
 		</div>
 	</div>
-	<div id="pauseMenu">
-		<h1>Game Paused</h1>
-		<button id="btnResume">Resume</button>
-	</div>
-	<div id="outerGameInterface">
-		<div id="player"></div>
-		<div id="btnPause" class="btnGameInterface">
-			<img src="media/pause.svg" alt="Pause">
-		</div>
-		<div id="inventory">
-			<div id="inventoryButton" class="btnGameInterface">
-				<img src="media/box-open.svg" alt="Inventory">
-			</div>
-			<div id="inventoryDisplay">
-				<div id="inventoryDisplayHeader">
-					Inventory
-				</div>
-				<div id="inventoryDisplayContent">
-					<div id="inventoryDisplayContentItems">
-						<div class="inventoryItem">
-							<div class="inventoryItemIcon">
-								<img src="media/wire.svg" alt="Wire" class="uncollected">
-							</div>
-							<div class="inventoryItemName">
-								Wire
-							</div>
-						</div>
-						<div class="inventoryItem">
-							<div class="inventoryItemIcon">
-								<img src="media/fire-extinguisher.svg" alt="fire" class="uncollected">
-							</div>
-							<div class="inventoryItemName">
-								Fire extinguisher
-							</div>
-						</div>
-						<div class="inventoryItem">
-							<div class="inventoryItemIcon">
-								<img src="media/hairspray.svg" alt="hairspray" class="uncollected">
-							</div>
-							<div class="inventoryItemName">
-								Hairspray
-							</div>
-						</div>
-						<div class="inventoryItem">
-							<div class="inventoryItemIcon">
-								<img src="media/lighter.svg" alt="lighter" class="uncollected">
-							</div>
-							<div class="inventoryItemName">
-								Lighter
-							</div>
-						</div>
-						<div class="inventoryItem">
-							<div class="inventoryItemIcon">
-								<img src="media/tape.svg" alt="tape" class="uncollected">
-							</div>
-							<div class="inventoryItemName">
-								Tape
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<i id="playerHealthBarHeart" class="fa-solid fa-heart"></i>
-		<div id="playerHealthBar">
-			<div id="playerHealthBarFill"></div>
-			<p id="playerHealthNumber">100%</p>
-		</div>
-		<!-- For Testing Purposes -->
-		<button id="btnPreviousLevel">Previous Level</button>
-		<button id="btnNextLevel">Next Level</button>
-
-
-		<div id="FloorFive" class="level-map walled-room">
-			<zombie id="ZombieF5Z1" class="zombie" health="5" attack="5" killpoints="10" speed="5"></zombie>
-			<zombie id="ZombieF5Z2" class="zombie" health="5" attack="5" killpoints="10" speed="5"></zombie>
-			<div id="FloorFiveDoor" class="door"></div>
-			<div id="WallF5W1" class="wall"></div>
-			<div id="F5Bookshelf1" class="bookshelf" shelves="3">
-				<div class="shelf">
-					<script>
-						loadMessageUpdate("Putting the books on the shelves");
-					</script>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-				</div>
-
-				<div class="shelf">
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-					<div class="book right colour"></div>
-				</div>
-				<div class="shelf">
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-					<div class="book left colour"></div>
-				</div>
-			</div>
-			<div id="StaircaseF54" class="staircase" staircount="6"></div>
-		</div> <!-- End of Floor Five Map -->
-
-		<div id="FloorFour" class="level-map walled-room">
-			<zombie id="ZombieF4Z1" class="zombie" health=5></zombie>
-			<room>
-				<div class="table left">
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-				</div>
-			</room>
-			<room>
-				<div class="table">
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-					<computer></computer>
-				</div>
-			</room>
-		</div>
-		<!-- End of Floor Four Map -->
-
-		<div id="FloorThree" class="level-map">
-
-		</div> <!-- End of Floor Three Map -->
-
-		<div id="FloorTwo" class="level-map">
-
-		</div> <!-- End of Floor Two Map -->
-
-		<div id="FloorOne" class="level-map">
-
-		</div> <!-- End of Floor One Map -->
-
-		<div id="FloorGround" class="level-map">
-			<workbench></workbench>
-		</div> <!-- End of Ground Floor Map -->
+	
+		<script>
+			$(document).ready(function () {
+				$('#levelDisplay').load(function () {
+					$('#levelDisplay')
+						.contents().find("body")
+						.html("iframe");
+					$('#levelDisplay')
+						.contents().find("head")
+						.append($('<link rel="stylesheet" type="text/css" href="css/characters.css">')
+						);
+				});
+			});
+		</script>
 
 	</div> <!-- End GameInterface -->
 
@@ -311,11 +128,9 @@
 	</script>
 	<script src="js/damage.js"></script>
 	<script>
-		if (load == 11) {
 			loadMessageUpdate("Starting Game");
 			$("#loadScreen").fadeOut(1000);
 			$("#startScreen").css("display", "flex");
-		}
 	</script>
 </body>
 

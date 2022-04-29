@@ -8,7 +8,7 @@ var player = document.getElementById("player");
 
 var score = 0;
 var totalZombies = 2; // Number of zombies on the level
-var playerSpeed = 4;
+var playerSpeed = 6.5;
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -61,7 +61,7 @@ setInterval(function () {
 			}
 		});
 
-		var FloorName = $(".level-map.walled-room.active").attr("id");
+		var FloorName = $(".level-map.active").attr("id");
 
 		try {
 			var map = document.getElementById(FloorName);
