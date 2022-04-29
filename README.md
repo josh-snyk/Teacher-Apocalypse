@@ -16,4 +16,4 @@ You can download these files and open the index.html file. If we have done our j
 - [Diary](https://studentsouththamesac-my.sharepoint.com/:w:/g/personal/20050599_student_stcg_ac_uk/EQre6HPc9LpEji4PlpHQaH0BLvpwxTmbn8LeYqFLWgwNKw?e=SgHJJn)
 - [Notes](https://studentsouththamesac-my.sharepoint.com/:w:/r/personal/20050599_student_stcg_ac_uk/Documents/BTEC%20L3%20RQF%20ICT/9/ICT%20U9%20Game%20Plan%20Notes%20Joel%20%26%20Spencer.docx?d=w69b9cc80fd1f4b49b6d5ca4bab73371d&csf=1&web=1&e=Urd3mw) 
 
-© 2022 Joel Sprouse and Spencer Woods
+© 2022 [Joel Sprouse](https://github.com/14sprouj) and [Spencer Woods](https://github.com/oddsocksbanana)
