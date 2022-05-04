@@ -71,3 +71,14 @@
   border-radius: 6px;
   transform: rotate(-90deg);
 }
+
+.staircase {
+}
+
+.staircase .stair {
+    width: 1vh;
+    height: 0.5vh;
+    background-color: #59c2ef;
+    border-radius: rgb(16, 15, 15) solid 0.1vh;
+    transform: rotate(90deg);
+}
