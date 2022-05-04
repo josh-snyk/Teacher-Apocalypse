@@ -33,6 +33,16 @@ $("zombie").each(function () { // Every time zombie is seen in html file, the co
 	zombieLegs.appendChild(zombieLegR);
 });
 
+function getHypotenuse(zombieX, zombieY, playerX, playerY) {
+	var hypotenuse = Math.sqrt((zombieX - playerX) * (zombieX - playerX) + (zombieY - playerY) * (zombieY - playerY));
+	console.log("Distance: " + hypotenuse + "px");
+	return hypotenuse;
+}
+
+function getAngle(zombieX, zombieY, playerX, playerY) {
+	
+}
+
 // Move Zombies
 setInterval(function () {
 	$("zombie.active").each(function () {
@@ -42,15 +52,30 @@ setInterval(function () {
 		var zombieCentX = this.offsetLeft + (this.offsetWidth / 2);
 		var zombieCentY = this.offsetTop + (this.offsetHeight / 2);
 
-		var angle = Math.asin((zombieCentX - playerCentX) / Math.sqrt((zombieCentX - playerCentX) * (zombieCentX - playerCentX) + (zombieCentY - playerCentY) * (zombieCentY - playerCentY)));
+		var zombieBlocked = false;
+
+		var hypotenuse = Math.sqrt((zombieCentX - playerCentX) * (zombieCentX - playerCentX) + (zombieCentY - playerCentY) * (zombieCentY - playerCentY));
+		console.log("Distance: " + hypotenuse + "px");
+		
+		var angle = Math.asin((zombieCentY - playerCentY) / hypotenuse);
 		if (playerCentX < zombieCentX && playerCentY < zombieCentY) {
 			angle = Math.PI - angle;
 		}
 		if (playerCentX < zombieCentX && playerCentY >= zombieCentY) {
 			angle = -Math.PI - angle;
 		}
-		var direction = (-angle / Math.PI) * 1;
-		console.log("Direction: " + direction + "&deg;");
+		var direction = -angle / Math.PI;
+		
+		console.log("Direction: " + (direction * (180 / Math.PI)) + "&deg;");
+		var speed = parseInt($(this).attr("speed"));
+		console.log("Speed: " + speed);
+		speed = speed / 0.9;
+		this.style.left = this.offsetLeft + (speed * Math.cos(direction * Math.PI)) + "px";
+		this.style.top = this.offsetTop + (speed * Math.sin(direction * Math.PI)) + "px";
+		if (hypotenuse < 30) {
+			var health = $(this).attr("attack");
+			deductPlayerHealth(health);
+        }
 		console.groupEnd();
     })
 }, 50)

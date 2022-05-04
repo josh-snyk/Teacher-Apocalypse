@@ -7,10 +7,6 @@ $(document).ready(function () {
 		// Open in fullscreen
 		//openFullscreen();
 
-		// Display Floor Five
-		$("#FloorFive").addClass("active");
-		//$("#FloorFive").css("display", "flex");
-
 		// Set Health Bar
 		displayNewHealth(100);
 

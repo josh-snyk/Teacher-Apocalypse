@@ -8,7 +8,7 @@ var player = document.getElementById("player");
 
 var score = 0;
 var totalZombies = 2; // Number of zombies on the level
-var playerSpeed = 4;
+var playerSpeed = 6.5;
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -61,7 +61,7 @@ setInterval(function () {
 			}
 		});
 
-		var FloorName = $(".level-map.walled-room.active").attr("id");
+		var FloorName = $(".level-map.active").attr("id");
 
 		try {
 			var map = document.getElementById(FloorName);
@@ -74,7 +74,7 @@ setInterval(function () {
 				canMoveUp = false;
 			}
 
-			// To Low
+			// Too Low
 			if (map.offsetTop + map.offsetHeight < player.offsetTop + player.offsetHeight / 2) {
 				document.getElementById("player").style.top = map.offsetTop - player.offsetHeight / 2 + map.offsetHeight + "px";
 				canMoveDown = false;
@@ -92,7 +92,7 @@ setInterval(function () {
 				canMoveLeft = false;
 			}
 
-			// To Far Right
+			// Too Far Right
 			if (map.offsetLeft + map.offsetWidth < player.offsetLeft + player.offsetWidth / 2) {
 				document.getElementById("player").style.left = map.offsetLeft - player.offsetWidth / 2 + map.offsetWidth + "px";
 				canMoveRight = false;

@@ -6,6 +6,8 @@ function displayNewHealth(health) {
 }
 
 function deductPlayerHealth(points) {
-	playerHealth -= points;
-	displayNewHealth(playerHealth);
+	if (playerHealth > 0) {
+		playerHealth -= points;
+		displayNewHealth(playerHealth);
+	}
 }
